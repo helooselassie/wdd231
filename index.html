@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Selassie Heloo | WDD 231</title>
+  <meta name="description"
+    content="Course home page for Selassie Kwabla Heloo: WDD 231 web frontend development and the Web and Computer Programming certificate.">
+  <meta name="author" content="Selassie Kwabla Heloo">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/course.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <img src="images/logo.svg" alt="Site logo" width="40" height="40">
+    <span class="name">Selassie Heloo</span>
+    <button id="menu" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    <nav id="primary-nav">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="final/index.html">Final</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <figure class="portrait">
+        <img src="images/profile.jpg" alt="Portrait of Selassie Kwabla Heloo" width="200" height="200" loading="lazy">
+      </figure>
+      <p>I'm Selassie Kwabla Heloo, a web developer in training who also runs a technology solutions business in Accra,
+        Ghana. This site tracks my progress through WDD 231.</p>
+    </section>
+
+    <section class="skills">
+      <h2>What I'm Learning</h2>
+      <ul>
+        <li>Semantic HTML</li>
+        <li>Responsive CSS with Flexbox and Grid</li>
+        <li>JavaScript and the DOM</li>
+        <li>Accessibility and performance</li>
+      </ul>
+    </section>
+
+    <section class="courses">
+      <h2>Certificate: Web and Computer Programming</h2>
+      <div class="filters">
+        <button type="button" data-filter="all" class="current">All</button>
+        <button type="button" data-filter="WDD">WDD</button>
+        <button type="button" data-filter="CSE">CSE</button>
+      </div>
+      <p>Total credits: <span id="credits">0</span></p>
+      <div id="course-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/" aria-label="GitHub"><img src="images/github.svg" alt="" width="28" height="28"></a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="" width="28"
+          height="28"></a>
+    </div>
+    <p>&copy; <span id="currentyear"></span> Selassie Kwabla Heloo | Ghana</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+
+</html>

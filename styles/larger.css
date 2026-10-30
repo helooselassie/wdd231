@@ -1,0 +1,13 @@
+@media (min-width:700px){
+  #menu{display:none}
+  header{flex-wrap:nowrap;padding:.75rem 2rem}
+  .name{flex:0 1 auto;margin-right:auto}
+  nav{display:block;width:auto}
+  nav ul{display:flex;gap:.5rem}
+  main{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:1.5rem 2rem;max-width:1200px;margin:0 auto}
+  h1{grid-column:1/-1;margin:0}
+  section{margin-bottom:0}
+  .courses{grid-column:1/-1}
+  #course-list{grid-template-columns:repeat(3,1fr)}
+  footer{flex-direction:row;justify-content:space-around}
+}
