@@ -113,8 +113,7 @@ img {
   margin: 0;
 }
 
-.nav-toggle,
-.theme-toggle {
+.nav-toggle {
   background: none;
   border: 2px solid #fff;
   border-radius: 4px;
@@ -125,6 +124,11 @@ img {
 }
 
 .theme-toggle {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
   border-radius: 50%;
   width: 2.2rem;
   height: 2.2rem;
