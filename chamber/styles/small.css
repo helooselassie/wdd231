@@ -1,0 +1,354 @@
+/* Ghana Chamber of Commerce — base (mobile-first) styles, 320px and up */
+
+:root {
+  --color-primary: #102a42;
+  --color-secondary: #c4943c;
+  --color-bg: #f7f5f0;
+  --color-text: #2d2d2d;
+  --color-text-muted: #5a5a5a;
+  --color-border: #d8d3c8;
+  --color-card-bg: #ffffff;
+  --font-heading: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --font-body: "Open Sans", "Segoe UI", Arial, sans-serif;
+  --radius: 8px;
+  --gap: 1rem;
+}
+
+:root {
+  --color-heading: var(--color-primary);
+  --badge-member-bg: #e5e5e5;
+  --badge-member-text: var(--color-text);
+  --badge-silver-bg: #d9d9d9;
+  --badge-silver-text: var(--color-primary);
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0e1620;
+  --color-text: #e9e6df;
+  --color-text-muted: #aeb4bd;
+  --color-border: #2a3644;
+  --color-card-bg: #16212e;
+  --color-heading: #e9e6df;
+  --badge-member-bg: #2a3644;
+  --badge-member-text: #e9e6df;
+  --badge-silver-bg: #2a3644;
+  --badge-silver-text: var(--color-secondary);
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-secondary);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ===== Header ===== */
+
+.site-header {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-branding img {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+}
+
+.site-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.nav-toggle,
+.theme-toggle {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.primary-nav {
+  display: none;
+  flex-direction: column;
+  background-color: var(--color-primary);
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.5rem 1rem 1rem;
+  z-index: 20;
+}
+
+.primary-nav.open {
+  display: flex;
+}
+
+.primary-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.primary-nav a {
+  display: block;
+  color: #fff;
+  padding: 0.6rem 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+
+.primary-nav a[aria-current="page"] {
+  color: var(--color-secondary);
+}
+
+.primary-nav .secondary-link {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+}
+
+/* ===== Main / Directory ===== */
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2.5rem;
+}
+
+.page-title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.view-toggle button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.view-toggle button[aria-pressed="true"] {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+#directory {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+#directory.list-view {
+  grid-template-columns: 1fr;
+}
+
+.member-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#directory.list-view .member-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.member-card img {
+  border-radius: var(--radius);
+  width: 96px;
+  height: 96px;
+  align-self: flex-start;
+}
+
+#directory.list-view .member-card img {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.member-name {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.member-tagline {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.member-meta {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.member-meta strong {
+  color: var(--color-heading);
+}
+
+.membership-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.membership-1 {
+  background-color: var(--badge-member-bg);
+  color: var(--badge-member-text);
+}
+
+.membership-2 {
+  background-color: var(--badge-silver-bg);
+  color: var(--badge-silver-text);
+  border: 1px solid var(--color-secondary);
+}
+
+.membership-3 {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+/* ===== Footer ===== */
+
+.site-footer {
+  background-color: var(--color-primary);
+  color: #e9e6df;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.footer-social img {
+  width: 36px;
+  height: 36px;
+}
+
+.footer-meta {
+  font-size: 0.8rem;
+  color: rgba(233, 230, 223, 0.75);
+}
+
+.footer-meta p {
+  margin: 0.2rem 0;
+}

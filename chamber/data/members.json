@@ -1,0 +1,92 @@
+{
+  "members": [
+    {
+      "name": "Tema Harbour Logistics Ltd",
+      "address": "Harbour Road, Community 1, Tema",
+      "phone": "+233 30 320 1145",
+      "website": "https://temaharbourlogistics.example.com",
+      "image": "tema-harbour-logistics.svg",
+      "membership": 3,
+      "city": "Tema",
+      "category": "Logistics & Freight",
+      "description": "Freight forwarding and customs clearance serving the Port of Tema and the Free Zone."
+    },
+    {
+      "name": "Kumasi Kente Weavers Cooperative",
+      "address": "Adum Market Road, Kumasi",
+      "phone": "+233 32 202 7788",
+      "website": "https://kumasikente.example.com",
+      "image": "kumasi-kente-weavers.svg",
+      "membership": 2,
+      "city": "Kumasi",
+      "category": "Textiles & Crafts",
+      "description": "A weavers' cooperative producing and exporting handwoven kente cloth."
+    },
+    {
+      "name": "Takoradi Offshore Supply Co",
+      "address": "Harbour Area, Takoradi",
+      "phone": "+233 31 204 5521",
+      "website": "https://takoradioffshoresupply.example.com",
+      "image": "takoradi-offshore-supply.svg",
+      "membership": 3,
+      "city": "Takoradi",
+      "category": "Oil & Gas Services",
+      "description": "Supply and logistics support for offshore oil and gas operations."
+    },
+    {
+      "name": "Accra Central Business Hub",
+      "address": "Ring Road Central, Accra",
+      "phone": "+233 30 266 3390",
+      "website": "https://accracentralhub.example.com",
+      "image": "accra-central-business-hub.svg",
+      "membership": 1,
+      "city": "Accra",
+      "category": "Coworking & Office Space",
+      "description": "Flexible office and meeting space for startups and small businesses."
+    },
+    {
+      "name": "Tamale Shea Collective",
+      "address": "Aboabo Road, Tamale",
+      "phone": "+233 37 202 9910",
+      "website": "https://tamaleshea.example.com",
+      "image": "tamale-shea-collective.svg",
+      "membership": 2,
+      "city": "Tamale",
+      "category": "Agro-processing",
+      "description": "Processes and exports shea butter sourced from women-led farmer groups."
+    },
+    {
+      "name": "Golden Gate Bakery",
+      "address": "Community 6, Tema",
+      "phone": "+233 24 455 6120",
+      "website": "https://goldengatebakery.example.com",
+      "image": "golden-gate-bakery.svg",
+      "membership": 1,
+      "city": "Tema",
+      "category": "Food & Beverage",
+      "description": "Neighbourhood bakery and cafe supplying bread and pastries to local retailers."
+    },
+    {
+      "name": "Kumasi TechWorks",
+      "address": "Bantama High Street, Kumasi",
+      "phone": "+233 32 209 4471",
+      "website": "https://kumasitechworks.example.com",
+      "image": "kumasi-techworks.svg",
+      "membership": 2,
+      "city": "Kumasi",
+      "category": "IT Services",
+      "description": "Web and mobile app development studio serving businesses across Ashanti Region."
+    },
+    {
+      "name": "Accra Harbour View Hotel",
+      "address": "Liberation Road, Accra",
+      "phone": "+233 30 277 8800",
+      "website": "https://accraharbourview.example.com",
+      "image": "accra-harbour-view-hotel.svg",
+      "membership": 3,
+      "city": "Accra",
+      "category": "Hospitality",
+      "description": "Business hotel and conference venue in the heart of Accra."
+    }
+  ]
+}

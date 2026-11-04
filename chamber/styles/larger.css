@@ -1,0 +1,70 @@
+/* Ghana Chamber of Commerce — wider viewport styles */
+
+@media (min-width: 640px) {
+  .header-inner {
+    padding: 0.25rem 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .primary-nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .primary-nav a {
+    border-bottom: none;
+    padding: 0.25rem 0;
+  }
+
+  .view-toggle {
+    margin-bottom: 1.5rem;
+  }
+
+  #directory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #directory.list-view {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-meta {
+    text-align: right;
+  }
+}
+
+@media (min-width: 960px) {
+  main {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  #directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #directory.list-view {
+    grid-template-columns: 1fr;
+  }
+
+  .site-title {
+    font-size: 1.15rem;
+  }
+}

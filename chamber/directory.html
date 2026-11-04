@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Directory | Ghana Chamber of Commerce</title>
+  <meta name="description"
+    content="Browse member businesses of the Ghana Chamber of Commerce across Accra, Kumasi, Takoradi, Tema, and Tamale." />
+  <meta name="author" content="Sefakor Kwaku Heloo" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="images/favicon.ico" />
+
+  <!-- Facebook / Open Graph meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Business Directory | Ghana Chamber of Commerce" />
+  <meta property="og:description"
+    content="Browse member businesses of the Ghana Chamber of Commerce across Accra, Kumasi, Takoradi, Tema, and Tamale." />
+  <meta property="og:image" content="https://username.github.io/wdd231/chamber/images/og-banner.png" />
+  <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS: normalize first, then small, then larger -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-branding" href="index.html" aria-label="Ghana Chamber of Commerce home">
+      <img src="images/logo.svg" alt="" width="36" height="36" />
+      <p class="site-title">Ghana Chamber of Commerce</p>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html" aria-current="page">Business Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="about.html" class="secondary-link">About</a></li>
+        <li><a href="podcast.html" class="secondary-link">Podcast</a></li>
+        <li><a href="events.html" class="secondary-link">Events</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav"
+        aria-label="Open menu">
+        Menu
+      </button>
+    </div>
+  </div>
+</header>
+  <main>
+    <h1 class="page-title">Business Directory</h1>
+
+    <div class="view-toggle" role="group" aria-label="Directory view">
+      <button id="gridViewBtn" type="button" aria-pressed="true">Grid</button>
+      <button id="listViewBtn" type="button" aria-pressed="false">List</button>
+    </div>
+
+    <section id="directory" aria-live="polite">
+      <p>Loading members…</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <p><strong>Ghana Chamber of Commerce</strong></p>
+        <p>Accra, Kumasi, Takoradi, Tema, Tamale</p>
+        <p>info@ghanachamber.example.com</p>
+        <p>+233 30 123 4567</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/" aria-label="YouTube">
+            <img src="images/youtube.svg" alt="" width="36" height="36" />
+          </a>
+          <a href="https://x.com/" aria-label="X">
+            <img src="images/x.svg" alt="" width="36" height="36" />
+          </a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+            <img src="images/linkedin.svg" alt="" width="36" height="36" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>Sefakor Kwaku Heloo</p>
+        <p>WDD 231</p>
+        <p>&copy; <span id="currentyear"></span> Ghana Chamber of Commerce</p>
+        <p>Last modification: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
