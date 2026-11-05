@@ -1,29 +1,28 @@
 /* Minimal normalize/reset */
 html {
   line-height: 1.15;
-  -webkit-text-size-adjust: 100%
 }
 
 body {
-  margin: 0
+  margin: 0;
 }
 
 main {
-  display: block
+  display: block;
 }
 
 h1 {
   font-size: 2em;
-  margin: .67em 0
+  margin: .67em 0;
 }
 
 b,
 strong {
-  font-weight: bolder
+  font-weight: bolder;
 }
 
 img {
-  border-style: none
+  border-style: none;
 }
 
 button,
@@ -33,16 +32,14 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
-  margin: 0
+  margin: 0;
 }
 
 button {
   overflow: visible;
   text-transform: none;
-  -webkit-appearance: button;
-  appearance: button;
 }
 
 [hidden] {
-  display: none
+  display: none;
 }
