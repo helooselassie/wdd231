@@ -23,12 +23,12 @@
   <header>
     <img src="images/logo.svg" alt="Site logo" width="40" height="40">
     <span class="name">Selassie Heloo</span>
-    <button id="menu" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+    <button id="menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
     <nav id="primary-nav">
       <ul>
         <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-        <li><a href="chamber/index.html">Chamber</a></li>
-        <li><a href="final/index.html">Final</a></li>
+        <li><a href="chamber/index.html">Chamber Project</a></li>
+        <li><a href="final/index.html">Final Project</a></li>
       </ul>
     </nav>
   </header>
@@ -38,43 +38,41 @@
 
     <section class="about">
       <h2>About Me</h2>
-      <figure class="portrait">
-        <img src="images/profile.jpg" alt="Portrait of Selassie Kwabla Heloo" width="200" height="200" loading="lazy">
-      </figure>
       <p>I'm Selassie Kwabla Heloo, a web developer in training who also runs a technology solutions business in Accra,
-        Ghana. This site tracks my progress through WDD 231.</p>
+        Ghana. This site tracks my progress through WDD 231, where I'm building responsive, accessible pages with
+        semantic HTML, Flexbox and Grid, and JavaScript.</p>
     </section>
 
-    <section class="skills">
-      <h2>What I'm Learning</h2>
-      <ul>
-        <li>Semantic HTML</li>
-        <li>Responsive CSS with Flexbox and Grid</li>
-        <li>JavaScript and the DOM</li>
-        <li>Accessibility and performance</li>
-      </ul>
+    <section class="photo">
+      <h2>Student Photo</h2>
+      <figure class="portrait">
+        <img src="images/profile.jpg" alt="Portrait of Selassie Kwabla Heloo" width="400" height="514" loading="lazy">
+      </figure>
     </section>
 
     <section class="courses">
-      <h2>Certificate: Web and Computer Programming</h2>
+      <h2>Web Certificate Courses</h2>
       <div class="filters">
-        <button type="button" data-filter="all" class="current">All</button>
-        <button type="button" data-filter="WDD">WDD</button>
-        <button type="button" data-filter="CSE">CSE</button>
+        <button type="button" data-filter="all" class="current" aria-pressed="true">All</button>
+        <button type="button" data-filter="CSE" aria-pressed="false">CSE</button>
+        <button type="button" data-filter="WDD" aria-pressed="false">WDD</button>
       </div>
-      <p>Total credits: <span id="credits">0</span></p>
       <div id="course-list"></div>
+      <p class="total">The total credits for courses listed above is <span id="credits">0</span></p>
     </section>
   </main>
 
   <footer>
     <div class="social">
-      <a href="https://github.com/" aria-label="GitHub"><img src="images/github.svg" alt="" width="28" height="28"></a>
-      <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="" width="28"
-          height="28"></a>
+      <a href="https://github.com/YOUR-USERNAME" aria-label="GitHub" target="_blank" rel="noopener"><img
+          src="images/github.svg" alt="" width="28" height="28"></a>
+      <a href="https://www.linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn" target="_blank" rel="noopener"><img
+          src="images/linkedin.svg" alt="" width="28" height="28"></a>
+      <a href="https://x.com/YOUR-HANDLE" aria-label="X" target="_blank" rel="noopener"><img src="images/x.svg" alt=""
+          width="28" height="28"></a>
     </div>
-    <p>&copy; <span id="currentyear"></span> Selassie Kwabla Heloo | Ghana</p>
-    <p>Last modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="currentyear"></span> &bull; Selassie Kwabla Heloo &bull; Ghana</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
   </footer>
 </body>
 
