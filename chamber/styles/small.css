@@ -308,6 +308,11 @@ main {
   box-shadow: 0 2px 6px var(--shadow);
 }
 
+/* List view shows text only: no images */
+#directory.list-view .card-body img {
+  display: none;
+}
+
 .card-details {
   min-width: 0;
 }
