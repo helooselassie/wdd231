@@ -1,19 +1,9 @@
 /* Ghana Chamber of Commerce: wider viewport styles */
 
 @media (min-width: 640px) {
-  main {
-    padding: 2rem 1.5rem 3rem;
-  }
 
-  .page-title {
-    font-size: 2.2rem;
-  }
-
-  .view-toggle {
-    margin-bottom: 1.75rem;
-  }
-
-  #directory {
+  #directory,
+  .home-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -24,111 +14,12 @@
   #directory.list-view .card {
     display: grid;
     grid-template-columns: minmax(220px, 280px) 1fr;
-    align-items: stretch;
   }
 
   #directory.list-view .card-header {
     grid-row: 1 / span 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     border-right: 3px solid var(--gold);
-    border-bottom: none;
-  }
-
-  .footer-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .footer-meta {
-    text-align: right;
-  }
-}
-
-@media (min-width: 960px) {
-  .header-inner {
-    padding: 0.35rem 0;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
-
-  .primary-nav {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    width: auto;
-    padding: 0;
-    border-bottom: none;
-    background: none;
-  }
-
-  .primary-nav ul {
-    flex-direction: row;
-    gap: 1.25rem;
-  }
-
-  .primary-nav a {
-    position: relative;
-    padding: 0.6rem 0;
-    border-bottom: none;
-    font-size: 0.9rem;
-  }
-
-  .primary-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.2rem;
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    transition: width 0.25s;
-  }
-
-  .primary-nav a:hover::after,
-  .primary-nav a:focus::after,
-  .primary-nav a[aria-current="page"]::after {
-    width: 100%;
-  }
-
-  .site-title {
-    font-size: 1.15rem;
-  }
-
-  main {
-    padding: 2.5rem 1.5rem 3.5rem;
-  }
-
-  #directory {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  #directory.list-view {
-    grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 640px) {
-  .hero img {
-    height: 380px;
-  }
-
-  .hero-panel {
-    right: auto;
-    bottom: 2rem;
-    left: 2rem;
-    padding: 1.5rem;
-  }
-
-  .hero-panel h1 {
-    font-size: 1.75rem;
-  }
-
-  .home-grid {
-    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 0;
   }
 
   .spotlights {
@@ -138,9 +29,49 @@
   .spotlight-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .hero img {
+    height: 380px;
+  }
+
+  .hero-panel {
+    right: auto;
+    bottom: 2rem;
+    left: 2rem;
+    max-width: 26rem;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 960px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    display: flex;
+    position: static;
+    width: auto;
+    padding: 0;
+  }
+
+  .primary-nav ul {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+
+  .primary-nav a {
+    padding: 0.6rem 0;
+  }
+
+  #directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .hero img {
     height: 460px;
   }
