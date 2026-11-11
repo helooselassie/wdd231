@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome | Ghana Chamber of Commerce</title>
+  <meta name="description" content="Welcome to the Ghana Chamber of Commerce: join our network, see upcoming events, check the weather and meet our member spotlights.">
+  <meta name="author" content="Selassie Kwabla Heloo">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="images/favicon.ico">
+
+  <!-- Facebook / Open Graph meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Welcome | Ghana Chamber of Commerce">
+  <meta property="og:description" content="Join our network, see upcoming events and meet our member spotlights.">
+  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/og-banner.png">
+  <meta property="og:url" content="https://helooselassie.github.io/wdd231/chamber/index.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS: normalize first, then small, then larger -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlights.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+
+    <a class="site-branding" href="index.html" aria-label="Ghana Chamber of Commerce home">
+      <img src="images/logo.svg" alt="" width="36" height="36">
+      <p class="site-title">Ghana Chamber of Commerce</p>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Business Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="about.html" class="secondary-link">About</a></li>
+        <li><a href="podcast.html" class="secondary-link">Podcast</a></li>
+        <li><a href="events.html" class="secondary-link">Events</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav"
+        aria-label="Open menu">
+        Menu
+      </button>
+    </div>
+
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <img src="images/hero.svg" alt="Stylized city skyline at sunset in navy and gold" width="1200" height="500">
+      <div class="hero-panel">
+        <h1>Welcome to the Ghana Chamber of Commerce</h1>
+        <p>Connect, grow and shop local with Ghana's business community.</p>
+        <a class="cta" href="join.html">Join the Chamber</a>
+      </div>
+    </section>
+
+    <div class="home-grid">
+      <section class="panel events" aria-labelledby="events-title">
+        <h2 id="events-title">Upcoming Events</h2>
+        <ul class="event-list">
+          <li>
+            <time class="event-date" datetime="2026-11-20"><span>Nov</span><span>20</span></time>
+            <div>
+              <span class="event-title">Business Networking Breakfast</span>
+              <span class="event-meta">8:00 AM, Accra</span>
+            </div>
+          </li>
+          <li>
+            <time class="event-date" datetime="2026-12-04"><span>Dec</span><span>04</span></time>
+            <div>
+              <span class="event-title">SME Digital Skills Workshop</span>
+              <span class="event-meta">10:00 AM, Accra</span>
+            </div>
+          </li>
+          <li>
+            <time class="event-date" datetime="2026-12-12"><span>Dec</span><span>12</span></time>
+            <div>
+              <span class="event-title">Annual Members' Mixer</span>
+              <span class="event-meta">6:00 PM, Accra</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel weather" aria-labelledby="weather-title">
+        <h2 id="weather-title">Weather in Accra</h2>
+        <div class="weather-now">
+          <img id="weather-icon" src="images/weather-placeholder.svg" alt="" width="80" height="80">
+          <div>
+            <span id="current-temp" class="temp">--</span>
+            <span id="weather-desc" class="desc">Loading weather…</span>
+          </div>
+        </div>
+        <h3>3-Day Forecast</h3>
+        <ul id="forecast" class="forecast"></ul>
+      </section>
+
+      <section class="spotlights" aria-labelledby="spotlight-title">
+        <h2 id="spotlight-title">Member Spotlights</h2>
+        <div id="spotlights" class="spotlight-grid">
+          <p>Loading spotlights…</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <p><strong>Ghana Chamber of Commerce</strong></p>
+        <p>Accra, Kumasi, Takoradi, Tema, Tamale</p>
+        <p>info@ghanachamber.example.com</p>
+        <p>+233 30 123 4567</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/" aria-label="YouTube">
+            <img src="images/youtube.svg" alt="" width="36" height="36">
+          </a>
+          <a href="https://x.com/" aria-label="X">
+            <img src="images/x-social-icon.svg" alt="" width="36" height="36">
+          </a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+            <img src="images/linkedin.svg" alt="" width="36" height="36">
+          </a>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>Selassie Kwabla Heloo</p>
+        <p>WDD 231</p>
+        <p>&copy; <span id="currentyear"></span> Ghana Chamber of Commerce</p>
+        <p>Last modification: <span id="lastModified"></span></p>
+        <p>Weather data: OpenWeatherMap.org</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

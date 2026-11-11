@@ -111,3 +111,37 @@
     grid-template-columns: 1fr;
   }
 }
+@media (min-width: 640px) {
+  .hero img {
+    height: 380px;
+  }
+
+  .hero-panel {
+    right: auto;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 1.5rem;
+  }
+
+  .hero-panel h1 {
+    font-size: 1.75rem;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spotlights {
+    grid-column: 1 / -1;
+  }
+
+  .spotlight-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .hero img {
+    height: 460px;
+  }
+}
