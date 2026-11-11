@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W03 Modules | Selassie Kwabla Heloo</title>
+  <meta name="description" content="Learning activity converting a single script into JavaScript ES modules.">
+  <meta name="author" content="Selassie Kwabla Heloo">
+  <link rel="stylesheet" href="styles/modules.css">
+  <script type="module" src="scripts/modules.mjs"></script>
+</head>
+<body>
+  <main>
+    <h1>Enrollment</h1>
+    <h2 id="courseName"></h2>
+    <p id="courseCode"></p>
+
+    <div class="controls">
+      <label for="sectionNumber">Section</label>
+      <select id="sectionNumber"></select>
+      <button type="button" id="enrollStudent">Enroll Student</button>
+      <button type="button" id="dropStudent">Drop Student</button>
+    </div>
+
+    <table>
+      <caption>Course sections</caption>
+      <thead>
+        <tr>
+          <th scope="col">Section</th>
+          <th scope="col">Room</th>
+          <th scope="col">Enrolled</th>
+          <th scope="col">Days</th>
+          <th scope="col">Instructor</th>
+        </tr>
+      </thead>
+      <tbody id="sections"></tbody>
+    </table>
+  </main>
+</body>
+</html>
