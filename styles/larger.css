@@ -1,56 +1,89 @@
-@media (min-width:700px) {
-  #menu {
-    display: none
-  }
+/* ============================================
+   larger.css
+   This file ONLY contains a media query. Everything
+   inside it is ignored by the browser until the
+   screen is at least 768px wide, then it overrides
+   or adds to small.css's rules.
+   ============================================ */
+
+@media screen and (min-width: 768px) {
 
   header {
-    flex-wrap: nowrap;
-    padding: .75rem 2rem
+    padding: 1rem 2rem;
   }
 
-  .name {
-    flex: 0 1 auto;
-    margin-right: auto
+  .hamburger {
+    display: none;
   }
 
+  /* On wide screens the nav is always visible and
+     flows next to the branding instead of stacking below it */
   nav {
     display: block;
-    width: auto
+    width: auto;
+    order: 0;
   }
 
   nav ul {
-    display: flex;
-    gap: .5rem
+    flex-direction: row;
+    border-top: none;
+    margin-top: 0;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    padding: 0.5rem 0.25rem;
   }
 
   main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto
+    padding: 2rem 2rem 3rem;
   }
 
-  h1 {
-    grid-column: 1/-1;
-    margin: 0
+  main h1 {
+    font-size: 2.2rem;
   }
 
-  section {
-    margin-bottom: 0
+  /* This is the two-column, non-default layout the assignment
+     requires: the tagline sits beside the bio text, while course
+     cards flow into a responsive grid further down the page. */
+  .about-intro {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
   }
 
-  .courses {
-    grid-column: 1/-1
+  .about-intro .tagline {
+    flex: 0 0 220px;
   }
 
-  #course-list {
-    grid-template-columns: repeat(3, 1fr)
+  .about-intro > div {
+    flex: 1;
+  }
+
+  .about-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .about-list li {
+    flex: 1 1 45%;
+  }
+
+  .course-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
 
   footer {
+    display: flex;
     flex-direction: row;
-    justify-content: space-around
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 1.25rem 2rem;
+  }
+
+  .footer-social {
+    margin-bottom: 0;
   }
 }

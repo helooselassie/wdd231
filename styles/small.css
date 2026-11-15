@@ -1,197 +1,314 @@
+/* ============================================
+   small.css
+   Base styles. These apply to EVERY screen size,
+   starting from the smallest phones (320px).
+   larger.css adds a media query on top of this
+   for wider screens, it never replaces this file.
+   ============================================ */
+
+/* A simple reset: browsers add their own default
+   margin/padding to things like <body> and <ul>.
+   Zeroing it out gives us a clean, predictable start. */
 *,
 *::before,
 *::after {
-    box-sizing: border-box
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --navy: #0B1F33;
-    --gold: #C9A24D;
-    --white: #fff;
-    --light: #f4f6f9
+  /* Custom properties (CSS variables): define a color
+     once here, reuse it everywhere with var(--name).
+     Change the color scheme in one place. */
+  --color-primary: #0f766e;   /* teal */
+  --color-primary-dark: #0b5a54;
+  --color-accent: #d4af37;    /* gold */
+  --color-text: #1f2a2e;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f4f7f6;
+  --color-border: #d9e2e0;
+  --font-heading: 'Poppins', Arial, sans-serif;
+  --font-body: 'Poppins', Arial, sans-serif;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: "Poppins", Arial, sans-serif;
-    line-height: 1.6;
-    color: #1a1a1a;
-    background: var(--white)
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  /* Prevents the dreaded horizontal scrollbar on narrow screens */
+  overflow-x: hidden;
 }
 
 img {
-    max-width: 100%;
-    height: auto
+  max-width: 100%;
+  display: block;
 }
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+}
+
+/* ---------- HEADER (mobile first) ---------- */
 
 header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: .75rem;
-    padding: .75rem 1rem;
-    background: var(--navy);
-    color: var(--white)
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg);
+  border-bottom: 3px solid var(--color-accent);
+  position: relative;
 }
 
-.name {
-    font-weight: 600;
-    flex: 1
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-#menu {
-    background: none;
-    border: 2px solid var(--gold);
-    color: var(--gold);
-    font-size: 1.5rem;
-    line-height: 1;
-    padding: .2rem .6rem;
-    border-radius: 4px;
-    cursor: pointer
+.site-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
 }
 
+/* Hamburger button: three stacked bars made from <span> elements */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary-dark);
+  border-radius: 2px;
+}
+
+/* Nav is hidden until the hamburger opens it (small screens only) */
 nav {
-    display: none;
-    width: 100%
+  display: none;
+  width: 100%;
+  /* order: 10 pushes nav below header items on the flex row when open */
+  order: 10;
 }
 
 nav.open {
-    display: block
+  display: block;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+  margin-top: 0.75rem;
 }
 
 nav a {
-    display: block;
-    padding: .75rem 1rem;
-    color: var(--white);
-    text-decoration: none;
-    border-bottom: 3px solid transparent
+  display: block;
+  padding: 0.75rem 0.5rem;
+  font-weight: 600;
+  /* Smooth hover feedback without any layout jump (no twitching) */
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 nav a:hover,
 nav a:focus {
-    background: var(--gold);
-    color: var(--navy)
+  background-color: var(--color-bg-soft);
+  color: var(--color-primary);
 }
 
+/* "Wayfinding": the current page's link looks different from the rest */
 nav a.active {
-    border-bottom-color: var(--gold);
-    font-weight: 600
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-accent);
 }
+
+/* ---------- MAIN ---------- */
 
 main {
-    padding: 1rem
+  padding: 1.25rem 1rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-h1 {
-    color: var(--navy);
-    border-bottom: 4px solid var(--gold);
-    padding-bottom: .25rem
-}
-
-h2 {
-    color: var(--navy);
-    margin-top: 0
+main h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 section {
-    background: var(--light);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 6px
+  margin-bottom: 2rem;
 }
 
-.portrait {
-    margin: 0;
-    display: flex;
-    justify-content: center
+section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-border);
 }
 
-.portrait img {
-    width: 100%;
-    max-width: 280px;
-    border-radius: 6px;
-    border: 3px solid var(--gold)
+.welcome p,
+.about p {
+  margin-bottom: 0.75rem;
 }
 
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    margin-bottom: .5rem
+.about-intro .tagline {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
 }
 
-.filters button {
-    padding: .5rem 1rem;
-    border: 2px solid var(--navy);
-    background: var(--white);
-    color: var(--navy);
-    font: inherit;
-    border-radius: 4px;
-    cursor: pointer
+.about h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
-.filters button:hover {
-    background: var(--gold)
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.filters button.current {
-    background: var(--navy);
-    color: var(--white)
+.about-list li {
+  padding: 0.6rem 0.8rem;
+  background-color: var(--color-bg-soft);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 4px;
+  font-size: 0.95rem;
 }
 
-#course-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: .5rem
+.mindset {
+  border-left: 3px solid var(--color-primary);
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  color: var(--color-primary-dark);
+  background-color: var(--color-bg-soft);
 }
 
-.card {
-    padding: .6rem 1rem;
-    border: 2px solid var(--navy);
-    border-radius: 4px;
-    background: var(--white);
-    font-weight: 600;
-    color: var(--navy)
+.footer-social {
+  flex-wrap: wrap;
 }
 
-.card.done {
-    background: var(--navy);
-    color: var(--white);
-    border-color: var(--gold)
+/* ---------- COURSE FILTER BUTTONS ---------- */
+
+.course-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.card.done::after {
-    content: " ✓";
-    color: var(--gold)
+.filter-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  background-color: var(--color-bg);
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.total {
-    text-align: center;
-    margin: .75rem 0 0
+.filter-btn:hover {
+  background-color: var(--color-bg-soft);
 }
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* ---------- COURSE CARDS (single column on small screens) ---------- */
+
+.course-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.course-card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: var(--color-bg-soft);
+}
+
+.course-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Completed courses get a distinct, complementary treatment */
+.course-card.completed {
+  border-color: var(--color-accent);
+  background-color: #fdf8ec;
+}
+
+.course-card.completed h3::after {
+  content: " ✓ Completed";
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.credit-total {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+/* ---------- FOOTER (stacked on small screens) ---------- */
 
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .25rem;
-    padding: 1rem;
-    background: var(--navy);
-    color: var(--white);
-    text-align: center
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 footer p {
-    margin: .25rem 0
-}
-
-.social {
-    display: flex;
-    gap: 1rem
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
 }

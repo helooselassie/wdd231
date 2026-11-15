@@ -2,33 +2,45 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Selassie Heloo | WDD 231</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Course home page for Selassie Kwabla Heloo: WDD 231 web frontend development and the Web and Computer Programming certificate.">
-  <meta name="author" content="Selassie Kwabla Heloo">
-  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    content="Course home page for WDD 231, built by Selassie Kwabla Heloo, Systems Engineer and Software Developer." />
+  <meta name="author" content="Selassie Kwabla Heloo" />
+  <title>WDD 231 | Home</title>
+
+  <!-- Google Fonts: one family, two weights (regular body text, bold headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/larger.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS: small.css loads first (mobile-first base styles), larger.css adds the desktop layout via a media query -->
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+
+  <!-- JS files use defer so they run only after the HTML has finished loading, without blocking the page render -->
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/date.js" defer></script>
-  <script src="scripts/course.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
 </head>
 
 <body>
+
   <header>
-    <img src="images/logo.svg" alt="Site logo" width="40" height="40">
-    <span class="name">Selassie Heloo</span>
-    <button id="menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    <div class="branding">
+      <img src="images/logo.svg" alt="Site logo" class="logo" width="40" height="40" />
+      <span class="site-name">Selassie Kwabla Heloo</span>
+    </div>
+    <button id="menu-button" class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav id="primary-nav">
       <ul>
-        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-        <li><a href="chamber/index.html">Chamber Project</a></li>
-        <li><a href="final/index.html">Final Project</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="final/index.html">Final</a></li>
       </ul>
     </nav>
   </header>
@@ -36,44 +48,108 @@
   <main>
     <h1>Home</h1>
 
-    <section class="about">
-      <h2>About Me</h2>
-      <p>I'm Selassie Kwabla Heloo, a web developer in training who also runs a technology solutions business in Accra,
-        Ghana. This site tracks my progress through WDD 231, where I'm building responsive, accessible pages with
-        semantic HTML, Flexbox and Grid, and JavaScript.</p>
+    <section class="welcome">
+      <h2>Welcome</h2>
+      <p>
+        This is my course home page for WDD 231, Web Frontend Development. It brings
+        together what I am learning about responsive design, accessible markup, and
+        JavaScript, and it will grow as the course progresses.
+      </p>
     </section>
 
-    <section class="photo">
-      <h2>Student Photo</h2>
-      <figure class="portrait">
-        <img src="images/profile.jpg" alt="Portrait of Selassie Kwabla Heloo" width="400" height="514" loading="lazy">
-      </figure>
+    <section class="about">
+      <h2>About Me</h2>
+      <div class="about-intro">
+        <p class="tagline">
+          Systems Engineer &bull; Software Developer &bull; Electronic Security Specialist &bull; Technology
+          Entrepreneur
+        </p>
+        <div>
+          <p>
+            I'm Selassie Kwabla Heloo, a Systems Engineer and technology enthusiast passionate
+            about designing, developing, implementing, and maintaining secure and scalable
+            technology solutions. My work sits at the intersection of software engineering,
+            electronic security, IT infrastructure, and digital innovation.
+          </p>
+          <p>
+            I enjoy understanding complex business and technical challenges, identifying the
+            right technologies, and transforming ideas into practical solutions that deliver
+            measurable value. Through my work at
+            <a href="https://seldatasolutions.com/" target="_blank" rel="noopener noreferrer">SelData Solutions</a>,
+            I contribute to delivering integrated technology services that help individuals
+            and businesses operate smarter, safer, and more efficiently.
+          </p>
+        </div>
+      </div>
+
+      <h3>What I Do</h3>
+      <ul class="about-list">
+        <li><strong>Electronic Security:</strong> CCTV, access control, biometric systems, intrusion alarms, electric
+          fencing, vehicle tracking, and automation.</li>
+        <li><strong>Software Development:</strong> Modern websites, web applications, backend systems, API integrations,
+          and business automation.</li>
+        <li><strong>IT &amp; Network Infrastructure:</strong> Network architecture, LAN/WAN, structured cabling,
+          servers, cloud solutions, and IT support.</li>
+        <li><strong>Branding &amp; Digital Solutions:</strong> Brand identity, UI/UX, digital marketing, SEO, and
+          creative technology solutions.</li>
+        <li><strong>Systems Engineering:</strong> Infrastructure deployment, system integration, security,
+          troubleshooting, and continuous optimisation.</li>
+      </ul>
+
+      <blockquote class="mindset">
+        &ldquo;Technology is most powerful when it solves real problems, protects what matters, and makes life
+        simpler.&rdquo;
+      </blockquote>
     </section>
 
     <section class="courses">
-      <h2>Web Certificate Courses</h2>
-      <div class="filters">
-        <button type="button" data-filter="all" class="current" aria-pressed="true">All</button>
-        <button type="button" data-filter="CSE" aria-pressed="false">CSE</button>
-        <button type="button" data-filter="WDD" aria-pressed="false">WDD</button>
+      <h2>My Certificate Courses</h2>
+      <div class="course-filters">
+        <button data-filter="all" class="filter-btn active">All Courses</button>
+        <button data-filter="wdd" class="filter-btn">WDD Courses</button>
+        <button data-filter="cse" class="filter-btn">CSE Courses</button>
       </div>
-      <div id="course-list"></div>
-      <p class="total">The total credits for courses listed above is <span id="credits">0</span></p>
+      <div id="course-cards" class="course-cards">
+        <!-- Course cards are injected here by scripts/courses.js -->
+      </div>
+      <p class="credit-total">
+        Total credits shown: <span id="credit-total">0</span>
+      </p>
     </section>
   </main>
 
   <footer>
-    <div class="social">
-      <a href="https://github.com/helooselassie" aria-label="GitHub" target="_blank" rel="noopener"><img
-          src="images/github.svg" alt="" width="28" height="28"></a>
-      <a href="https://www.linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn" target="_blank" rel="noopener"><img
-          src="images/linkedin.svg" alt="" width="28" height="28"></a>
-      <a href="https://x.com/YOUR-HANDLE" aria-label="X" target="_blank" rel="noopener"><img
-          src="images/x-social-icon.svg" alt="" width="28" height="28"></a>
+    <div class="footer-social">
+      <a href="https://github.com/helooselassie" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <img src="images/github.svg" alt="GitHub" width="28" height="28" />
+      </a>
+      <a href="https://www.linkedin.com/in/selassieheloo" target="_blank" rel="noopener noreferrer"
+        aria-label="LinkedIn profile">
+        <img src="images/linkedin.svg" alt="LinkedIn" width="28" height="28" />
+      </a>
+      <a href="https://x.com/selassieheloo" target="_blank" rel="noopener noreferrer" aria-label="X profile">
+        <img src="images/x.svg" alt="X" width="28" height="28" />
+      </a>
+      <a href="https://www.instagram.com/selassieheloo/" target="_blank" rel="noopener noreferrer"
+        aria-label="Instagram profile">
+        <img src="images/instagram.svg" alt="Instagram" width="28" height="28" />
+      </a>
+      <a href="https://wa.me/233240301853" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <img src="images/whatsapp.svg" alt="WhatsApp" width="28" height="28" />
+      </a>
+      <a href="mailto:helooselassie@gmail.com" aria-label="Email">
+        <img src="images/email.svg" alt="Email" width="28" height="28" />
+      </a>
     </div>
-    <p>&copy; <span id="currentyear"></span> &bull; Selassie Kwabla Heloo &bull; Ghana</p>
-    <p>Last Modification: <span id="lastModified"></span></p>
+    <div class="footer-info">
+      <p id="copyright"></p>
+      <p>Selassie Kwabla Heloo, Ghana</p>
+    </div>
+    <div class="footer-modified">
+      <p id="lastModified"></p>
+    </div>
   </footer>
+
 </body>
 
 </html>
