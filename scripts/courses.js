@@ -28,7 +28,7 @@ const courses = [
     name: "Programming with Functions",
     credits: 3,
     certificate: "cse",
-    completed: true,
+    completed: false,
   },
   {
     code: "WDD 131",

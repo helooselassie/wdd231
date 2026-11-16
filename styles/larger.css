@@ -48,15 +48,24 @@
      cards flow into a responsive grid further down the page. */
   .about-intro {
     display: flex;
+    flex-direction: row;
     gap: 2rem;
     align-items: flex-start;
   }
 
-  .about-intro .tagline {
-    flex: 0 0 220px;
+  .photo {
+    order: 0;
   }
 
-  .about-intro > div {
+  .about-intro .tagline {
+    flex: 0 0 200px;
+  }
+
+  .about-intro .photo {
+    flex: 0 0 160px;
+  }
+
+  .about-intro > div:last-child {
     flex: 1;
   }
 
