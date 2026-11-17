@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema Chamber of Commerce | Join</title>
+  <meta name="description" content="Join the Tema Chamber of Commerce and Industry. Compare membership levels and submit a membership application." />
+  <meta name="author" content="Selassie Kwabla Heloo" />
+  <link rel="icon" href="../images/chamber-logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="styles/join.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../images/chamber-logo.svg" alt="Tema Chamber of Commerce logo" />
+        <span>Tema Chamber of Commerce</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
+        &#9776;<span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="primaryNav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="join-header">
+      <h1>Join the Chamber</h1>
+      <p>Choose the membership level that fits your business, then complete the application below.</p>
+    </section>
+
+    <!-- Membership level cards -->
+    <section class="levels" aria-label="Membership levels">
+      <article class="level-card" style="--delay: 0s">
+        <h2>NP Membership</h2>
+        <p class="price">Free</p>
+        <p>For registered non-profit organizations serving the Tema area.</p>
+        <button type="button" class="button modal-trigger" data-modal="npModal">Learn More</button>
+      </article>
+
+      <article class="level-card" style="--delay: 0.12s">
+        <h2>Bronze Membership</h2>
+        <p class="price">GHS 150 / year</p>
+        <p>Essential membership for new and small businesses.</p>
+        <button type="button" class="button modal-trigger" data-modal="bronzeModal">Learn More</button>
+      </article>
+
+      <article class="level-card" style="--delay: 0.24s">
+        <h2>Silver Membership</h2>
+        <p class="price">GHS 350 / year</p>
+        <p>Added visibility and networking for growing businesses.</p>
+        <button type="button" class="button modal-trigger" data-modal="silverModal">Learn More</button>
+      </article>
+
+      <article class="level-card" style="--delay: 0.36s">
+        <h2>Gold Membership</h2>
+        <p class="price">GHS 650 / year</p>
+        <p>Full chamber benefits and top placement for established businesses.</p>
+        <button type="button" class="button modal-trigger" data-modal="goldModal">Learn More</button>
+      </article>
+    </section>
+
+    <!-- Modals -->
+    <dialog id="npModal" class="level-modal">
+      <h2>NP Membership Benefits</h2>
+      <ul>
+        <li>Free listing in the online member directory</li>
+        <li>Invitations to quarterly networking events</li>
+        <li>Access to chamber volunteer and resource network</li>
+      </ul>
+      <button type="button" class="button modal-close">Close</button>
+    </dialog>
+
+    <dialog id="bronzeModal" class="level-modal">
+      <h2>Bronze Membership Benefits</h2>
+      <ul>
+        <li>Everything in NP Membership</li>
+        <li>Standard directory listing with logo</li>
+        <li>One free event ticket per year</li>
+        <li>Member-rate access to chamber training workshops</li>
+      </ul>
+      <button type="button" class="button modal-close">Close</button>
+    </dialog>
+
+    <dialog id="silverModal" class="level-modal">
+      <h2>Silver Membership Benefits</h2>
+      <ul>
+        <li>Everything in Bronze Membership</li>
+        <li>Priority placement in the directory</li>
+        <li>Two free event tickets per year</li>
+        <li>Quarterly feature in the chamber newsletter</li>
+        <li>Ribbon-cutting ceremony for new locations</li>
+      </ul>
+      <button type="button" class="button modal-close">Close</button>
+    </dialog>
+
+    <dialog id="goldModal" class="level-modal">
+      <h2>Gold Membership Benefits</h2>
+      <ul>
+        <li>Everything in Silver Membership</li>
+        <li>Top placement in the directory with featured badge</li>
+        <li>Four free event tickets per year</li>
+        <li>Logo placement on the chamber homepage</li>
+        <li>One complimentary chamber-sponsored advertisement per year</li>
+      </ul>
+      <button type="button" class="button modal-close">Close</button>
+    </dialog>
+
+    <!-- Application form -->
+    <section class="application">
+      <h2>Membership Application</h2>
+      <form id="joinForm" action="thankyou.html" method="get">
+        <div class="form-row">
+          <label for="firstName">First Name<span aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            title="Your first name"
+            autocomplete="given-name"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="lastName">Last Name<span aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            title="Your last name"
+            autocomplete="family-name"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="orgTitle">Organizational Title</label>
+          <input
+            type="text"
+            id="orgTitle"
+            name="orgTitle"
+            title="Title must be at least 7 characters and contain only letters, hyphens, and spaces"
+            autocomplete="organization-title"
+            pattern="[A-Za-z\s\-]{7,}"
+            placeholder="e.g. Operations Manager"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email Address<span aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            title="Your email address"
+            autocomplete="email"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone Number<span aria-hidden="true">*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            title="Your phone number"
+            autocomplete="tel"
+            placeholder="+233 24 000 0000"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="orgName">Business/Organization Name<span aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="orgName"
+            name="orgName"
+            title="Your business or organization name"
+            autocomplete="organization"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="orgDescription">Business Description</label>
+          <textarea
+            id="orgDescription"
+            name="orgDescription"
+            title="A short description of your business"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <fieldset class="form-row membership-fieldset">
+          <legend>Membership Level<span aria-hidden="true">*</span></legend>
+
+          <label class="radio-label">
+            <input type="radio" name="membershipLevel" value="NP Membership" required />
+            NP Membership
+          </label>
+
+          <label class="radio-label">
+            <input type="radio" name="membershipLevel" value="Bronze Membership" />
+            Bronze Membership
+          </label>
+
+          <label class="radio-label">
+            <input type="radio" name="membershipLevel" value="Silver Membership" />
+            Silver Membership
+          </label>
+
+          <label class="radio-label">
+            <input type="radio" name="membershipLevel" value="Gold Membership" />
+            Gold Membership
+          </label>
+        </fieldset>
+
+        <input type="hidden" id="timestamp" name="timestamp" />
+
+        <button type="submit" class="button">Submit Application</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; <span id="currentYear"></span> Tema Chamber of Commerce and Industry. All rights reserved.</p>
+      <p>Selassie Kwabla Heloo, Ghana</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script src="../scripts/nav.js"></script>
+  <script src="scripts/join.js"></script>
+</body>
+</html>

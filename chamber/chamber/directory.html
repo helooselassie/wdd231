@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema Chamber of Commerce | Member Directory</title>
+  <meta name="description" content="Browse member businesses of the Tema Chamber of Commerce and Industry in grid or list view." />
+  <meta name="author" content="Selassie Kwabla Heloo" />
+  <link rel="icon" href="../images/chamber-logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="styles/directory.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../images/chamber-logo.svg" alt="Tema Chamber of Commerce logo" />
+        <span>Tema Chamber of Commerce</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
+        &#9776;<span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="primaryNav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="directory.html" aria-current="page">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="directory-header">
+      <h1>Member Directory</h1>
+      <p>Explore businesses that belong to the Tema Chamber of Commerce and Industry.</p>
+      <div class="view-toggle" role="group" aria-label="Choose display view">
+        <button id="gridViewBtn" type="button" aria-pressed="true">
+          <span aria-hidden="true">&#9638;&#9638;</span> Grid
+        </button>
+        <button id="listViewBtn" type="button" aria-pressed="false">
+          <span aria-hidden="true">&#8801;</span> List
+        </button>
+      </div>
+    </section>
+
+    <section id="memberContainer" class="members grid-view" aria-live="polite">
+      <p class="loading">Loading member directory&hellip;</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; <span id="currentYear"></span> Tema Chamber of Commerce and Industry. All rights reserved.</p>
+      <p>Selassie Kwabla Heloo, Ghana</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script src="../scripts/nav.js"></script>
+  <script src="scripts/directory.js"></script>
+</body>
+</html>

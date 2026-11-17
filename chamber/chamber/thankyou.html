@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tema Chamber of Commerce | Thank You</title>
+  <meta name="description"
+    content="Thank you for applying for membership with the Tema Chamber of Commerce and Industry." />
+  <meta name="author" content="Selassie Kwabla Heloo" />
+  <link rel="icon" href="../images/chamber-logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="styles/join.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../images/chamber-logo.svg" alt="Tema Chamber of Commerce logo" />
+        <span>Tema Chamber of Commerce</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
+        &#9776;<span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="primaryNav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="join-header">
+      <h1>Thank You!</h1>
+      <p>Your membership application has been received. Here is a summary of what you submitted.</p>
+    </section>
+
+    <section class="application">
+      <h2>Application Summary</h2>
+      <dl id="summaryList" class="summary-list">
+        <div class="summary-row">
+          <dt>First Name</dt>
+          <dd id="outFirstName"></dd>
+        </div>
+        <div class="summary-row">
+          <dt>Last Name</dt>
+          <dd id="outLastName"></dd>
+        </div>
+        <div class="summary-row">
+          <dt>Email Address</dt>
+          <dd id="outEmail"></dd>
+        </div>
+        <div class="summary-row">
+          <dt>Phone Number</dt>
+          <dd id="outPhone"></dd>
+        </div>
+        <div class="summary-row">
+          <dt>Business/Organization Name</dt>
+          <dd id="outOrgName"></dd>
+        </div>
+        <div class="summary-row">
+          <dt>Membership Level</dt>
+          <dd id="outMembershipLevel"></dd>
+        </div>
+        <div class="summary-row">
+          <dt>Submitted On</dt>
+          <dd id="outTimestamp"></dd>
+        </div>
+      </dl>
+      <a class="button" href="directory.html">View Member Directory</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; <span id="currentYear"></span> Tema Chamber of Commerce and Industry. All rights reserved.</p>
+      <p>Selassie Kwabla Heloo, Ghana</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script src="../scripts/nav.js"></script>
+  <script src="scripts/thankyou.js"></script>
+</body>
+
+</html>
