@@ -7,14 +7,31 @@
   <meta name="description" content="Join the Tema Chamber of Commerce and Industry. Compare membership levels and submit a membership application." />
   <meta name="author" content="Selassie Kwabla Heloo" />
   <link rel="icon" href="images/chamber-logo.svg" type="image/svg+xml" />
+
+  <!-- Open Graph: how this page looks when shared on social media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Join the Tema Chamber of Commerce" />
+  <meta property="og:description" content="Compare NP, Bronze, Silver, and Gold membership levels and apply to join the Tema Chamber of Commerce and Industry." />
+  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/chamber-logo.svg" />
+  <meta property="og:url" content="https://helooselassie.github.io/wdd231/chamber/join.html" />
+
+  <!-- Google Fonts: one family, two weights (regular body text, bold headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/join.css" />
+
+  <!-- JS files use defer so they run only after the HTML has finished loading, without blocking the page render -->
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/join.js" defer></script>
 </head>
 <body>
   <header>
     <div class="header-inner">
       <a class="brand" href="index.html">
-        <img src="images/chamber-logo.svg" alt="Tema Chamber of Commerce logo" />
+        <img src="images/chamber-logo.svg" alt="" />
         <span>Tema Chamber of Commerce</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
@@ -39,28 +56,28 @@
 
     <!-- Membership level cards -->
     <section class="levels" aria-label="Membership levels">
-      <article class="level-card" style="--delay: 0s">
+      <article class="level-card level-card--1">
         <h2>NP Membership</h2>
         <p class="price">Free</p>
         <p>For registered non-profit organizations serving the Tema area.</p>
         <button type="button" class="button modal-trigger" data-modal="npModal">Learn More</button>
       </article>
 
-      <article class="level-card" style="--delay: 0.12s">
+      <article class="level-card level-card--2">
         <h2>Bronze Membership</h2>
         <p class="price">GHS 150 / year</p>
         <p>Essential membership for new and small businesses.</p>
         <button type="button" class="button modal-trigger" data-modal="bronzeModal">Learn More</button>
       </article>
 
-      <article class="level-card" style="--delay: 0.24s">
+      <article class="level-card level-card--3">
         <h2>Silver Membership</h2>
         <p class="price">GHS 350 / year</p>
         <p>Added visibility and networking for growing businesses.</p>
         <button type="button" class="button modal-trigger" data-modal="silverModal">Learn More</button>
       </article>
 
-      <article class="level-card" style="--delay: 0.36s">
+      <article class="level-card level-card--4">
         <h2>Gold Membership</h2>
         <p class="price">GHS 650 / year</p>
         <p>Full chamber benefits and top placement for established businesses.</p>
@@ -242,7 +259,5 @@
     </div>
   </footer>
 
-  <script src="scripts/nav.js"></script>
-  <script src="scripts/join.js"></script>
 </body>
 </html>

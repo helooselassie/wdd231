@@ -7,14 +7,31 @@
   <meta name="description" content="Browse member businesses of the Tema Chamber of Commerce and Industry in grid or list view." />
   <meta name="author" content="Selassie Kwabla Heloo" />
   <link rel="icon" href="images/chamber-logo.svg" type="image/svg+xml" />
+
+  <!-- Open Graph: how this page looks when shared on social media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tema Chamber of Commerce | Member Directory" />
+  <meta property="og:description" content="Browse member businesses of the Tema Chamber of Commerce and Industry in a searchable grid or list view." />
+  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/chamber-logo.svg" />
+  <meta property="og:url" content="https://helooselassie.github.io/wdd231/chamber/directory.html" />
+
+  <!-- Google Fonts: one family, two weights (regular body text, bold headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/directory.css" />
+
+  <!-- JS files use defer so they run only after the HTML has finished loading, without blocking the page render -->
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
 </head>
 <body>
   <header>
     <div class="header-inner">
       <a class="brand" href="index.html">
-        <img src="images/chamber-logo.svg" alt="Tema Chamber of Commerce logo" />
+        <img src="images/chamber-logo.svg" alt="" />
         <span>Tema Chamber of Commerce</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
@@ -58,7 +75,5 @@
     </div>
   </footer>
 
-  <script src="scripts/nav.js"></script>
-  <script src="scripts/directory.js"></script>
 </body>
 </html>
