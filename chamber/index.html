@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tema Chamber of Commerce | Home</title>
-  <meta name="description" content="Tema Chamber of Commerce and Industry - connecting businesses in Tema, Ghana." />
-  <meta name="author" content="Selassie Kwabla Heloo" />
-  <link rel="icon" href="images/chamber-logo.svg" type="image/svg+xml" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Accra Chamber of Commerce</title>
+  <meta name="description" content="Welcome to the Accra Chamber of Commerce. See upcoming events, local weather and featured member businesses, and join today.">
+  <meta name="author" content="Selassie Kwabla Heloo">
 
-  <!-- Open Graph: how this page looks when shared on social media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tema Chamber of Commerce and Industry" />
-  <meta property="og:description" content="Connecting hospitality, logistics, manufacturing, healthcare, and technology businesses across Tema, Ghana since 1998." />
-  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/social-card.svg" />
-  <meta property="og:url" content="https://helooselassie.github.io/wdd231/chamber/index.html" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
 
-  <!-- Google Fonts: one family, two weights (regular body text, bold headings) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Home | Accra Chamber of Commerce">
+  <meta property="og:description" content="Events, weather and featured member businesses from the Accra Chamber of Commerce.">
+  <meta property="og:image" content="https://username.github.io/wdd231/chamber/images/og-image.png">
+  <meta property="og:url" content="https://username.github.io/wdd231/chamber/index.html">
 
-  <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/style.css" />
-
-  <!-- JS files use defer so they run only after the HTML has finished loading, without blocking the page render -->
-  <script src="scripts/nav.js" defer></script>
-  <script src="scripts/home.js" defer></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/small.css">
+  <link rel="stylesheet" href="css/larger.css">
+  <script src="js/site.js" defer></script>
+  <script src="js/home.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/chamber-logo.svg" alt="" />
-        <span>Tema Chamber of Commerce</span>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
-        &#9776;<span class="visually-hidden">Menu</span>
-      </button>
-      <nav id="primaryNav">
-        <ul>
-          <li><a href="../index.html">Main Site</a></li>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="images/favicon.svg" alt="" width="40" height="40">
+      <span>Accra Chamber<br>of Commerce</span>
+    </a>
+    <button id="menu-button" class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Tema Chamber of Commerce and Industry</h1>
-      <p>Supporting businesses in Tema, Ghana since 1998.</p>
-      <a class="button" href="directory.html">View Member Directory</a>
-    </section>
-
-    <section class="weather" aria-label="Current weather in Tema, Ghana">
-      <h2>Weather in Tema</h2>
-      <div id="weatherWidget" class="weather-widget">
-        <p class="loading">Loading current conditions&hellip;</p>
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="images/hero-1200.webp"
+           srcset="images/hero-600.webp 600w, images/hero-1200.webp 1200w"
+           sizes="(min-width: 1100px) 1100px, 100vw"
+           width="1200" height="500" fetchpriority="high"
+           alt="Accra city skyline at dusk with lit office windows">
+      <div class="hero-text">
+        <h1 id="hero-title">Grow your business in Accra</h1>
+        <a class="cta" href="join.html">Join the Chamber</a>
       </div>
     </section>
 
-    <section>
-      <h2>About the Chamber</h2>
-      <p>
-        The Tema Chamber of Commerce and Industry connects hospitality, logistics,
-        manufacturing, healthcare, and technology businesses across the Tema
-        metropolis. Members gain access to networking events, advocacy, and
-        local business resources.
-      </p>
-    </section>
+    <div class="home-grid">
+      <section class="panel" aria-labelledby="events-title">
+        <h2 id="events-title">Upcoming Events</h2>
+        <ul class="events">
+          <li><strong>Networking Breakfast</strong><br>Thursday, 8:00 am &ndash; Ridge Tech Hub</li>
+          <li><strong>Small Business Finance Workshop</strong><br>Next Tuesday, 2:00 pm &ndash; Labone</li>
+          <li><strong>Chamber Mixer &amp; Awards</strong><br>Last Friday of the month, 6:00 pm &ndash; Osu</li>
+        </ul>
+      </section>
 
-    <section class="spotlights" aria-label="Featured members">
-      <h2>Member Spotlights</h2>
-      <div id="spotlightContainer" class="spotlights-grid">
-        <p class="loading">Loading featured members&hellip;</p>
+      <section class="panel" aria-labelledby="weather-title">
+        <h2 id="weather-title">Weather in Accra</h2>
+        <div id="current-weather" aria-live="polite">Loading weather&hellip;</div>
+        <h3>3-day forecast</h3>
+        <ul id="forecast" class="forecast"></ul>
+      </section>
+    </div>
+
+    <section aria-labelledby="spotlight-title">
+      <h2 id="spotlight-title">Member Spotlights</h2>
+      <div id="spotlights" class="spotlight-grid">
+        <p class="status">Loading spotlights&hellip;</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <p>&copy; <span id="currentYear"></span> Tema Chamber of Commerce and Industry. All rights reserved.</p>
-      <p>Selassie Kwabla Heloo, Ghana</p>
-      <p>Last Modified: <span id="lastModified"></span></p>
+  <footer class="site-footer">
+    <div>
+      <h2>Contact</h2>
+      <p>74 Adaaman Street, Awoshie, Accra<br>
+        <a href="tel:+233240301853">+233 240 30 1853</a><br>
+        <a href="mailto:info@accrachamber.example">info@accrachamber.example</a></p>
+    </div>
+    <div>
+      <h2>Site info</h2>
+      <p>&copy; <span id="year"></span> Accra Chamber of Commerce<br>
+        Selassie Kwabla Heloo<br>
+        WDD 231<br>
+        Last modified: <span id="last-modified"></span></p>
     </div>
   </footer>
-
 </body>
 </html>

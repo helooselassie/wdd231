@@ -30,3 +30,17 @@
 @media (min-width: 1000px) {
   #members.grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Home page, wider layouts */
+@media (min-width: 700px) {
+  .hero-text h1 { font-size: 2.4rem; }
+  .hero-text { gap: 1.25rem; }
+  .home-grid { grid-template-columns: 3fr 2fr; }
+  .spotlight-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+}
+
+/* Join page, wider layouts */
+@media (min-width: 800px) {
+  .join-layout { grid-template-columns: 1.3fr 1fr; align-items: start; }
+  .join-form { padding: 1.5rem; }
+}

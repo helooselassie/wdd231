@@ -2,8 +2,6 @@ const membersUrl = 'data/members.json';
 const container = document.querySelector('#members');
 const gridButton = document.querySelector('#grid-button');
 const listButton = document.querySelector('#list-button');
-const menuButton = document.querySelector('#menu-button');
-const siteNav = document.querySelector('#site-nav');
 
 const levelNames = { 1: 'Member', 2: 'Silver', 3: 'Gold' };
 let members = [];
@@ -23,14 +21,6 @@ async function getMembers() {
     console.error('Could not load members:', error);
     container.innerHTML = '<p class="status">Sorry, the member list could not be loaded. Please try again later.</p>';
   }
-}
-
-/* Small helper so every element is built with textContent (no raw HTML from data) */
-function makeElement(tag, text, className) {
-  const element = document.createElement(tag);
-  if (text) element.textContent = text;
-  if (className) element.className = className;
-  return element;
 }
 
 function buildCard(member) {
@@ -91,15 +81,5 @@ function setView(view) {
 
 gridButton.addEventListener('click', () => setView('grid'));
 listButton.addEventListener('click', () => setView('list'));
-
-/* Mobile menu */
-menuButton.addEventListener('click', () => {
-  const isOpen = siteNav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', isOpen);
-});
-
-/* Footer dates */
-document.querySelector('#year').textContent = new Date().getFullYear();
-document.querySelector('#last-modified').textContent = document.lastModified;
 
 getMembers();
