@@ -1,0 +1,32 @@
+/* Tablet and desktop layout */
+@media (min-width: 700px) {
+  .site-header { flex-wrap: nowrap; padding: 0.75rem 2rem; }
+
+  .menu-button { display: none; }
+
+  .site-nav { display: block; width: auto; }
+  .site-nav ul { display: flex; gap: 0.25rem; margin: 0; }
+  .site-nav a { border-bottom: 0; border-radius: var(--radius); padding: 0.5rem 1rem; }
+
+  main { padding: 1.5rem 2rem; }
+
+  #members.grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* In list view, each row lays its info out across the width */
+  #members.list .member-body {
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+  #members.list .member h2 { grid-column: 1; }
+  #members.list .tagline { grid-column: 1; }
+  #members.list .badge { grid-column: 3; grid-row: 1; justify-self: start; }
+  #members.list .contact { grid-column: 2; grid-row: 1 / span 2; }
+
+  .site-footer { grid-template-columns: 1fr 1fr; padding: 1.5rem 2rem; }
+}
+
+@media (min-width: 1000px) {
+  #members.grid { grid-template-columns: repeat(3, 1fr); }
+}

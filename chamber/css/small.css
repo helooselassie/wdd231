@@ -1,0 +1,172 @@
+/* Mobile-first styles. larger.css adds the wider layouts. */
+:root {
+  --navy: #0B1F33;
+  --gold: #C9A24D;
+  --white: #ffffff;
+  --light: #f3f5f8;
+  --text: #1c2630;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--light);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--navy); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Header and navigation */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.menu-button {
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--gold);
+  content: "";
+  transition: transform 0.2s;
+}
+.menu-icon { position: relative; }
+.menu-icon::before { position: absolute; top: -7px; }
+.menu-icon::after { position: absolute; top: 7px; }
+
+.menu-button[aria-expanded="true"] .menu-icon { background: transparent; }
+.menu-button[aria-expanded="true"] .menu-icon::before { top: 0; transform: rotate(45deg); }
+.menu-button[aria-expanded="true"] .menu-icon::after { top: 0; transform: rotate(-45deg); }
+
+.site-nav { display: none; width: 100%; }
+.site-nav.open { display: block; }
+
+.site-nav ul { list-style: none; margin: 0.75rem 0 0; padding: 0; }
+.site-nav a {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.site-nav a:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Wayfinding: the current page is clearly marked */
+.site-nav a.active {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* Main content */
+main { padding: 1rem; max-width: 1100px; margin: 0 auto; }
+h1 { color: var(--navy); margin: 0.5rem 0 0; }
+.intro { margin-top: 0.25rem; }
+
+.view-toggle { display: flex; gap: 0.5rem; margin: 1rem 0; }
+.view-toggle button {
+  padding: 0.5rem 1.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.view-toggle button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+
+/* Member cards (grid view) and rows (list view) */
+#members { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+
+.member {
+  background: var(--white);
+  border: 1px solid #d5dbe3;
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.member img { width: 100%; aspect-ratio: 5 / 3; object-fit: cover; }
+.member-body { padding: 0.75rem 1rem 1rem; overflow-wrap: anywhere; }
+.member h2 { margin: 0 0 0.25rem; font-size: 1.15rem; color: var(--navy); }
+.tagline { margin: 0 0 0.5rem; font-style: italic; }
+.member p { margin: 0.2rem 0; }
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+  border-radius: 999px;
+}
+.badge.gold { background: var(--gold); border-color: var(--gold); }
+.badge.silver { background: #d9dde2; }
+.badge.member { background: var(--white); }
+
+/* List view: one column, no images */
+#members.list { grid-template-columns: 1fr; gap: 0; }
+#members.list .member {
+  border-radius: 0;
+  border-top-width: 1px;
+  border-left: 4px solid var(--gold);
+}
+#members.list .member:nth-child(even) { background: var(--light); }
+
+.status { grid-column: 1 / -1; }
+
+/* Footer */
+.site-footer {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  background: var(--navy);
+  color: var(--white);
+}
+.site-footer h2 { margin: 0 0 0.25rem; font-size: 1.1rem; color: var(--gold); }
+.site-footer p { margin: 0; }
+.site-footer a { color: var(--white); }
