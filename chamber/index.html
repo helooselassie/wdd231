@@ -21,9 +21,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/style.css" />
 
   <!-- JS files use defer so they run only after the HTML has finished loading, without blocking the page render -->
   <script src="scripts/nav.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </head>
 <body>
   <header>
@@ -53,6 +55,13 @@
       <a class="button" href="directory.html">View Member Directory</a>
     </section>
 
+    <section class="weather" aria-label="Current weather in Tema, Ghana">
+      <h2>Weather in Tema</h2>
+      <div id="weatherWidget" class="weather-widget">
+        <p class="loading">Loading current conditions&hellip;</p>
+      </div>
+    </section>
+
     <section>
       <h2>About the Chamber</h2>
       <p>
@@ -61,6 +70,13 @@
         metropolis. Members gain access to networking events, advocacy, and
         local business resources.
       </p>
+    </section>
+
+    <section class="spotlights" aria-label="Featured members">
+      <h2>Member Spotlights</h2>
+      <div id="spotlightContainer" class="spotlights-grid">
+        <p class="loading">Loading featured members&hellip;</p>
+      </div>
     </section>
   </main>
 
