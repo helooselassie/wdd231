@@ -7,15 +7,7 @@
   --text: #1c2630;
   --radius: 8px;
   --line: #d5dbe3;
-  --field-border: #6b7684;
   --error: #a61b1b;
-  --silver: #d9dde2;
-  --silver-edge: #8d96a3;
-  --bronze: #8a5a2b;
-  --overlay: #0b1f3373;
-  --backdrop: #0b1f33b3;
-  --nav-line: #ffffff33;
-  --nav-hover: #ffffff1a;
 }
 
 * {
@@ -40,10 +32,32 @@ a {
   color: var(--navy);
 }
 
-a:focus-visible,
-button:focus-visible {
+h1,
+h2,
+h3 {
+  color: var(--navy);
+}
+
+button,
+input[type="submit"] {
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
+}
+
+/* Shared look for every card-style box */
+.member,
+.panel,
+.join-form,
+.level-card,
+.summary {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
 }
 
 .visually-hidden {
@@ -84,7 +98,6 @@ button:focus-visible {
   background: none;
   border: 2px solid var(--gold);
   border-radius: var(--radius);
-  cursor: pointer;
 }
 
 .menu-icon,
@@ -146,11 +159,11 @@ button:focus-visible {
   padding: 0.75rem 0.5rem;
   color: var(--white);
   text-decoration: none;
-  border-bottom: 1px solid var(--nav-line);
+  border-bottom: 1px solid #ffffff33;
 }
 
 .site-nav a:hover {
-  background: var(--nav-hover);
+  background: #ffffff1a;
 }
 
 /* Wayfinding: the current page is clearly marked */
@@ -168,7 +181,6 @@ main {
 }
 
 h1 {
-  color: var(--navy);
   margin: 0.5rem 0 0;
 }
 
@@ -184,13 +196,11 @@ h1 {
 
 .view-toggle button {
   padding: 0.5rem 1.25rem;
-  font: inherit;
   font-weight: 600;
   color: var(--navy);
   background: var(--white);
   border: 2px solid var(--navy);
   border-radius: var(--radius);
-  cursor: pointer;
 }
 
 .view-toggle button[aria-pressed="true"] {
@@ -202,14 +212,10 @@ h1 {
 #members {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr;
 }
 
 .member {
-  background: var(--white);
-  border: 1px solid var(--line);
   border-top: 4px solid var(--gold);
-  border-radius: var(--radius);
   overflow: hidden;
 }
 
@@ -224,10 +230,11 @@ h1 {
   overflow-wrap: anywhere;
 }
 
-.member h2 {
+.member h2,
+.member h3,
+.level-card h3 {
   margin: 0 0 0.25rem;
   font-size: 1.15rem;
-  color: var(--navy);
 }
 
 .tagline {
@@ -235,8 +242,9 @@ h1 {
   font-style: italic;
 }
 
-.member p {
-  margin: 0.2rem 0;
+.member p,
+.level-card p {
+  margin: 0.25rem 0;
 }
 
 .badge {
@@ -255,7 +263,7 @@ h1 {
 }
 
 .badge.silver {
-  background: var(--silver);
+  background: #d9dde2;
 }
 
 .badge.member {
@@ -264,7 +272,6 @@ h1 {
 
 /* List view: one column, no images */
 #members.list {
-  grid-template-columns: 1fr;
   gap: 0;
 }
 
@@ -314,11 +321,6 @@ h1 {
   background: var(--navy);
 }
 
-.hero img {
-  width: 100%;
-  height: auto;
-}
-
 .hero-text {
   position: absolute;
   inset: 0;
@@ -329,7 +331,7 @@ h1 {
   gap: 0.75rem;
   padding: 0.5rem;
   text-align: center;
-  background: var(--overlay);
+  background: #0b1f3373;
 }
 
 .hero-text h1 {
@@ -359,21 +361,18 @@ h1 {
 
 .panel {
   padding: 1rem;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
 }
 
 .panel h2,
+.levels h2,
+.modal h2,
 main>section>h2 {
   margin-top: 0;
-  color: var(--navy);
 }
 
 .panel h3 {
   margin: 1rem 0 0.25rem;
   font-size: 1rem;
-  color: var(--navy);
 }
 
 .events {
@@ -417,13 +416,6 @@ main>section>h2 {
 .spotlight-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-.member h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1.15rem;
-  color: var(--navy);
 }
 
 /* Join page: form */
@@ -437,9 +429,6 @@ main>section>h2 {
   display: grid;
   gap: 1rem;
   padding: 1rem;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
 }
 
 .join-form label {
@@ -459,15 +448,13 @@ main>section>h2 {
   font-weight: 400;
   color: var(--text);
   background: var(--white);
-  border: 2px solid var(--field-border);
+  border: 2px solid #6b7684;
   border-radius: var(--radius);
 }
 
 .join-form input:focus,
 .join-form select:focus,
 .join-form textarea:focus {
-  outline: 3px solid var(--gold);
-  outline-offset: 1px;
   border-color: var(--navy);
 }
 
@@ -480,7 +467,6 @@ main>section>h2 {
 }
 
 .join-form input.submit-button {
-  cursor: pointer;
   font-weight: 700;
   color: var(--navy);
   background: var(--gold);
@@ -494,11 +480,6 @@ main>section>h2 {
 }
 
 /* Membership cards */
-.levels h2 {
-  margin-top: 0;
-  color: var(--navy);
-}
-
 .level-cards {
   display: grid;
   gap: 1rem;
@@ -506,10 +487,7 @@ main>section>h2 {
 
 .level-card {
   padding: 1rem;
-  background: var(--white);
-  border: 1px solid var(--line);
   border-top: 6px solid var(--navy);
-  border-radius: var(--radius);
   animation: card-in 0.7s ease-out both;
 }
 
@@ -526,24 +504,15 @@ main>section>h2 {
 }
 
 .level-card.bronze {
-  border-top-color: var(--bronze);
+  border-top-color: #8a5a2b;
 }
 
 .level-card.silver {
-  border-top-color: var(--silver-edge);
+  border-top-color: #8d96a3;
 }
 
 .level-card.gold {
   border-top-color: var(--gold);
-}
-
-.level-card h3 {
-  margin: 0 0 0.25rem;
-  color: var(--navy);
-}
-
-.level-card p {
-  margin: 0.25rem 0;
 }
 
 .price {
@@ -571,13 +540,11 @@ main>section>h2 {
 .link-button {
   margin-top: 0.5rem;
   padding: 0.5rem 0;
-  font: inherit;
   font-weight: 600;
   color: var(--navy);
   text-decoration: underline;
   background: none;
   border: 0;
-  cursor: pointer;
 }
 
 .link-button:hover {
@@ -595,12 +562,7 @@ main>section>h2 {
 }
 
 .modal::backdrop {
-  background: var(--backdrop);
-}
-
-.modal h2 {
-  margin-top: 0;
-  color: var(--navy);
+  background: #0b1f33b3;
 }
 
 .modal ul {
@@ -609,13 +571,11 @@ main>section>h2 {
 
 .close-modal {
   padding: 0.6rem 1.25rem;
-  font: inherit;
   font-weight: 700;
   color: var(--white);
   background: var(--navy);
   border: 0;
   border-radius: var(--radius);
-  cursor: pointer;
 }
 
 /* Thank you page */
@@ -627,10 +587,7 @@ main>section>h2 {
 .summary {
   margin: 1.5rem 0;
   padding: 0.5rem 1rem;
-  background: var(--white);
-  border: 1px solid var(--line);
   border-left: 6px solid var(--gold);
-  border-radius: var(--radius);
 }
 
 .summary-row {
