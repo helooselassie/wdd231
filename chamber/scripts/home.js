@@ -1,5 +1,5 @@
 /* Get a free key at https://openweathermap.org/api (new keys can take a couple of hours to activate) */
-const apiKey = 'YOUR_OPENWEATHERMAP_KEY';
+const apiKey = '283abbfd02f9ca489f2b9b508835b9ca';
 const latitude = 5.6037;
 const longitude = -0.187;
 const weatherBase = 'https://api.openweathermap.org/data/2.5';
@@ -69,8 +69,8 @@ function showForecast(forecast, today) {
 
 async function getWeather() {
   try {
-    if (apiKey === 'YOUR_OPENWEATHERMAP_KEY') {
-      throw new Error('Add your OpenWeatherMap API key to js/home.js');
+    if (apiKey === '283abbfd02f9ca489f2b9b508835b9ca') {
+      throw new Error('Add your OpenWeatherMap API key to scripts/home.js');
     }
     const query = `lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
     const [current, forecast] = await Promise.all([
