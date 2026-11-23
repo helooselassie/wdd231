@@ -1,7 +1,8 @@
 const menuButton = document.querySelector("#menu-button");
-const navList = document.querySelector("#primary-nav");
+const siteNav = document.querySelector("#site-nav");
 
 menuButton.addEventListener("click", () => {
-  const isOpen = navList.classList.toggle("open");
+  const isOpen = siteNav.classList.toggle("open");
   menuButton.setAttribute("aria-expanded", isOpen);
+  menuButton.innerHTML = isOpen ? "&times;" : "&#9776;";
 });

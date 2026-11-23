@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Course Home Page | Selassie Kwabla Heloo</title>
-  <meta name="description" content="Course home page for Selassie Kwabla Heloo showing the Web and Computer Programming certificate courses and progress.">
+  <title>Selassie Heloo | WDD 231 Home</title>
+  <meta name="description" content="Course home page for Selassie Kwabla Heloo, a student in the Web and Computer Programming certificate.">
   <meta name="author" content="Selassie Kwabla Heloo">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/date.js" defer></script>
   <script src="scripts/course.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="brand">
-      <img src="images/logo.svg" alt="Site logo" width="40" height="40">
-      <span>Selassie Kwabla Heloo</span>
-    </div>
-    <button id="menu-button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">&#9776;</button>
-    <nav>
-      <ul id="primary-nav">
+    <a class="brand" href="index.html">
+      <img src="images/logo.svg" alt="" width="40" height="40">
+      <span>Selassie Heloo</span>
+    </a>
+    <button id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
         <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="chamber/index.html">Chamber</a></li>
         <li><a href="final/index.html">Final</a></li>
@@ -36,37 +39,37 @@
     <h1>Home</h1>
 
     <section class="about">
-      <h2>About Me</h2>
-      <p>I am a student in the Software Development program, building skills in HTML, CSS and JavaScript.</p>
-    </section>
-
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-      </ul>
+      <h2>About me</h2>
+      <img src="images/profile.png" alt="Selassie Heloo" width="240" height="240">
+      <div>
+        <p>I'm Selassie, based in Accra, Ghana. I run SelData Solutions, where we install facial recognition access control and vehicle tracking for businesses.</p>
+        <p>I'm taking the Web and Computer Programming certificate so I can build our company's web tools myself instead of hiring them out.</p>
+      </div>
     </section>
 
     <section class="courses">
-      <h2>Certificate: Web and Computer Programming</h2>
+      <h2>Certificate courses</h2>
       <div class="filters">
-        <button type="button" data-filter="all" class="selected">All</button>
-        <button type="button" data-filter="WDD">WDD</button>
-        <button type="button" data-filter="CSE">CSE</button>
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="WDD" aria-pressed="false">WDD</button>
+        <button type="button" data-filter="CSE" aria-pressed="false">CSE</button>
       </div>
-      <p id="credits" aria-live="polite"></p>
-      <div id="course-list"></div>
+      <p class="credits">Total credits: <strong id="credit-total">0</strong></p>
+      <ul id="course-list"></ul>
+    </section>
+
+    <section class="goals">
+      <h2>What I'm building</h2>
+      <p>Each week of this course adds a page to a Chamber of Commerce website: a directory, a home page, and a join form. The code is in my <a href="https://github.com/helooselassie/wdd231">wdd231 repository</a>.</p>
     </section>
   </main>
 
   <footer>
     <div class="social">
-      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
-      <a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
+      <a href="https://github.com/helooselassie"><img src="images/github.svg" alt="GitHub profile" width="32" height="32"></a>
+      <a href="https://www.linkedin.com/in/your-linkedin-handle"><img src="images/linkedin.svg" alt="LinkedIn profile" width="32" height="32"></a>
     </div>
-    <p>&copy; <span id="year"></span> Selassie Kwabla Heloo &ndash; Ghana</p>
+    <p>&copy; <span id="currentyear"></span> Selassie Kwabla Heloo, Ghana</p>
     <p>Last modified: <span id="lastModified"></span></p>
   </footer>
 </body>
