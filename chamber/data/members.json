@@ -1,84 +1,10 @@
-{
-  "members": [
-    {
-      "name": "Osu Coffee Roasters",
-      "address": "12 Oxford Street, Osu, Accra",
-      "phone": "+233 24 100 2001",
-      "website": "https://www.example.com/osu-coffee",
-      "image": "osu-coffee.svg",
-      "level": 3,
-      "tagline": "Small-batch Ghanaian coffee and a busy café.",
-      "established": 2014
-    },
-    {
-      "name": "Labone Legal Partners",
-      "address": "5 Cantonments Road, Labone, Accra",
-      "phone": "+233 30 200 3002",
-      "website": "https://www.example.com/labone-legal",
-      "image": "labone-legal.svg",
-      "level": 3,
-      "tagline": "Business and property law for growing companies.",
-      "established": 2009
-    },
-    {
-      "name": "Awoshie Auto Care",
-      "address": "74 Adaaman Street, Awoshie, Accra",
-      "phone": "+233 20 300 4003",
-      "website": "https://www.example.com/awoshie-auto",
-      "image": "awoshie-auto.svg",
-      "level": 2,
-      "tagline": "Servicing, repairs and fleet maintenance.",
-      "established": 2016
-    },
-    {
-      "name": "Kokomlemle Fresh Market",
-      "address": "21 Kokomlemle Road, Accra",
-      "phone": "+233 55 400 5004",
-      "website": "https://www.example.com/fresh-market",
-      "image": "fresh-market.svg",
-      "level": 2,
-      "tagline": "Farm-to-table produce delivered across the city.",
-      "established": 2018
-    },
-    {
-      "name": "Spintex Print & Signs",
-      "address": "8 Spintex Road, Accra",
-      "phone": "+233 27 500 6005",
-      "website": "https://www.example.com/spintex-print",
-      "image": "spintex-print.svg",
-      "level": 1,
-      "tagline": "Banners, branding, packaging and business cards.",
-      "established": 2020
-    },
-    {
-      "name": "Ridge Tech Hub",
-      "address": "3 Independence Avenue, Ridge, Accra",
-      "phone": "+233 50 600 7006",
-      "website": "https://www.example.com/ridge-tech",
-      "image": "ridge-tech.svg",
-      "level": 2,
-      "tagline": "Co-working space and IT support for startups.",
-      "established": 2019
-    },
-    {
-      "name": "Madina Tailoring House",
-      "address": "17 Madina Market Road, Accra",
-      "phone": "+233 24 700 8007",
-      "website": "https://www.example.com/madina-tailoring",
-      "image": "madina-tailoring.svg",
-      "level": 1,
-      "tagline": "Custom kente and corporate wear, made to measure.",
-      "established": 2012
-    },
-    {
-      "name": "Airport City Logistics",
-      "address": "40 Airport City, Accra",
-      "phone": "+233 30 800 9008",
-      "website": "https://www.example.com/airport-logistics",
-      "image": "airport-logistics.svg",
-      "level": 3,
-      "tagline": "Freight, warehousing and last-mile delivery.",
-      "established": 2011
-    }
-  ]
-}
+[
+  { "name": "Labone Dental Care", "category": "Health", "address": "14 Labone Crescent, Accra", "phone": "+233 30 000 0101", "website": "https://example.com/labone-dental", "image": "labone-dental.svg", "level": 3, "about": "Family dental clinic open six days a week." },
+  { "name": "Airport City Logistics", "category": "Freight", "address": "Block C, Airport City, Accra", "phone": "+233 30 000 0102", "website": "https://example.com/airport-logistics", "image": "airport-logistics.svg", "level": 3, "about": "Air and sea freight clearing for small importers." },
+  { "name": "Kaneshie Print & Pack", "category": "Printing", "address": "22 Kaneshie Market Road, Accra", "phone": "+233 30 000 0103", "website": "https://example.com/kaneshie-print", "image": "kaneshie-print.svg", "level": 2, "about": "Labels, boxes and banners printed in one to three days." },
+  { "name": "Osu Coffee Roasters", "category": "Food and drink", "address": "9 Oxford Street, Osu, Accra", "phone": "+233 30 000 0104", "website": "https://example.com/osu-coffee", "image": "osu-coffee.svg", "level": 2, "about": "Small-batch roaster with a daytime cafe." },
+  { "name": "Dansoman Solar Services", "category": "Energy", "address": "5 Estate Road, Dansoman, Accra", "phone": "+233 30 000 0105", "website": "https://example.com/dansoman-solar", "image": "dansoman-solar.svg", "level": 2, "about": "Rooftop solar and battery backup for homes and shops." },
+  { "name": "Madina Fabrics Co-op", "category": "Textiles", "address": "Stall 40, Madina Market, Accra", "phone": "+233 30 000 0106", "website": "https://example.com/madina-fabrics", "image": "madina-fabrics.svg", "level": 1, "about": "Cooperative of weavers and fabric sellers." },
+  { "name": "Tema Road Auto Parts", "category": "Automotive", "address": "31 Tema Station Road, Accra", "phone": "+233 30 000 0107", "website": "https://example.com/tema-auto", "image": "tema-auto.svg", "level": 1, "about": "Spare parts for taxis, trotros and private cars." },
+  { "name": "Legon Tutor Hub", "category": "Education", "address": "2 University Avenue, Legon, Accra", "phone": "+233 30 000 0108", "website": "https://example.com/legon-tutors", "image": "legon-tutors.svg", "level": 1, "about": "After-school tutoring and exam preparation." }
+]

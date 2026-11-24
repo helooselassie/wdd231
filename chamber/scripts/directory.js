@@ -1,85 +1,54 @@
-const membersUrl = 'data/members.json';
-const container = document.querySelector('#members');
-const gridButton = document.querySelector('#grid-button');
-const listButton = document.querySelector('#list-button');
+const membersContainer = document.querySelector("#members");
+const viewButtons = document.querySelectorAll(".view-toggle button");
+const levelNames = { 1: "Member", 2: "Silver", 3: "Gold" };
 
-const levelNames = { 1: 'Member', 2: 'Silver', 3: 'Gold' };
-let members = [];
-let currentView = 'grid';
-
-/* Fetch the member data from the JSON file */
 async function getMembers() {
   try {
-    const response = await fetch(membersUrl);
+    const response = await fetch("data/members.json");
     if (!response.ok) {
       throw new Error(`Request failed with status ${response.status}`);
     }
-    const data = await response.json();
-    members = data.members;
-    displayMembers();
+    const members = await response.json();
+    showMembers(members);
   } catch (error) {
-    console.error('Could not load members:', error);
-    container.innerHTML = '<p class="status">Sorry, the member list could not be loaded. Please try again later.</p>';
+    console.error(error);
+    membersContainer.innerHTML = "<p>The member list couldn't be loaded. Please try again later.</p>";
   }
 }
 
-function buildCard(member) {
-  const card = makeElement('article', '', 'member');
-  const levelName = levelNames[member.level] || 'Member';
+function showMembers(members) {
+  members.forEach((member) => {
+    const card = document.createElement("article");
+    card.className = "member";
 
-  // Images only appear in grid view; list view is text only
-  if (currentView === 'grid') {
-    const image = document.createElement('img');
+    const image = document.createElement("img");
     image.src = `images/${member.image}`;
-    image.alt = `${member.name} logo`;
+    image.alt = `Logo of ${member.name}`;
     image.width = 200;
     image.height = 120;
-    image.loading = 'lazy';
-    card.appendChild(image);
-  }
+    image.loading = "lazy";
 
-  const body = makeElement('div', '', 'member-body');
-  const badge = makeElement('span', `${levelName} level`, `badge ${levelName.toLowerCase()}`);
+    const body = document.createElement("div");
+    body.className = "member-body";
+    body.innerHTML = `
+      <h2>${member.name}</h2>
+      <p class="category">${member.category}</p>
+      <p>${member.address}</p>
+      <p><a href="tel:${member.phone.replaceAll(" ", "")}">${member.phone}</a></p>
+      <a href="${member.website}" target="_blank" rel="noopener">Visit website</a>
+      <span class="level level-${member.level}">${levelNames[member.level]}</span>
+    `;
 
-  const contact = makeElement('div', '', 'contact');
-  const address = makeElement('p', member.address);
-  const phone = makeElement('p');
-  const phoneLink = makeElement('a', member.phone);
-  phoneLink.href = `tel:${member.phone.replace(/\s/g, '')}`;
-  phone.appendChild(phoneLink);
-
-  const website = makeElement('p');
-  const websiteLink = makeElement('a', 'Visit website');
-  websiteLink.href = member.website;
-  websiteLink.target = '_blank';
-  websiteLink.rel = 'noopener noreferrer';
-  website.appendChild(websiteLink);
-
-  contact.append(address, phone, website);
-  body.append(
-    makeElement('h2', member.name),
-    makeElement('p', member.tagline, 'tagline'),
-    badge,
-    contact
-  );
-  card.appendChild(body);
-  return card;
+    card.append(image, body);
+    membersContainer.append(card);
+  });
 }
 
-function displayMembers() {
-  container.replaceChildren(...members.map(buildCard));
-}
-
-/* Switch between grid and list views */
-function setView(view) {
-  currentView = view;
-  container.className = view;
-  gridButton.setAttribute('aria-pressed', view === 'grid');
-  listButton.setAttribute('aria-pressed', view === 'list');
-  displayMembers();
-}
-
-gridButton.addEventListener('click', () => setView('grid'));
-listButton.addEventListener('click', () => setView('list'));
+viewButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    membersContainer.classList.toggle("list", button.dataset.view === "list");
+    viewButtons.forEach((other) => other.setAttribute("aria-pressed", other === button));
+  });
+});
 
 getMembers();

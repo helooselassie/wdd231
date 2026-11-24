@@ -3,75 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Member Directory | Accra Chamber of Commerce</title>
-  <meta name="description" content="Browse the businesses that belong to the Accra Chamber of Commerce, with contact details and membership levels.">
+  <title>Member Directory | Accra Business Chamber</title>
+  <meta name="description" content="Browse the businesses that belong to the Accra Business Chamber, with contact details and membership level.">
   <meta name="author" content="Selassie Kwabla Heloo">
 
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/favicon-180.png">
-
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Member Directory | Accra Chamber of Commerce">
-  <meta property="og:description" content="Browse the businesses that belong to the Accra Chamber of Commerce.">
-  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/og-image.png">
+  <meta property="og:title" content="Member Directory | Accra Business Chamber">
+  <meta property="og:description" content="Browse the businesses that belong to the Accra Business Chamber, with contact details and membership level.">
+  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/chamber-share.png">
   <meta property="og:url" content="https://helooselassie.github.io/wdd231/chamber/directory.html">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
-  <script src="scripts/site.js" defer></script>
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
   <script src="scripts/directory.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <a class="brand" href="index.html">
-      <img src="images/favicon.svg" alt="" width="40" height="40">
-      <span>Accra Chamber<br>of Commerce</span>
+      <img src="images/favicon.svg" alt="" width="36" height="36">
+      <span>Accra Business Chamber</span>
     </a>
-    <button id="menu-button" class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span class="menu-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Menu</span>
-    </button>
-    <nav id="site-nav" class="site-nav" aria-label="Main">
+    <button id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+    <nav id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="directory.html" class="active" aria-current="page">Directory</a></li>
         <li><a href="join.html">Join</a></li>
-        <li><a href="discover.html">Discover</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Member Directory</h1>
-    <p class="intro">Support local. Find a chamber member near you.</p>
+    <h1>Member directory</h1>
+    <p class="intro">Local businesses that belong to the chamber. Gold and Silver members are marked.</p>
 
-    <div class="view-toggle" role="group" aria-label="Choose how members are displayed">
-      <button type="button" id="grid-button" aria-pressed="true">Grid</button>
-      <button type="button" id="list-button" aria-pressed="false">List</button>
+    <div class="view-toggle">
+      <button type="button" data-view="grid" aria-pressed="true">Grid</button>
+      <button type="button" data-view="list" aria-pressed="false">List</button>
     </div>
 
-    <section id="members" class="grid" aria-live="polite">
-      <p class="status">Loading members&hellip;</p>
-    </section>
+    <section id="members" aria-label="Chamber members"></section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <div>
-      <h2>Contact</h2>
-      <p>74 Adaaman Street, Awoshie, Accra<br>
-        <a href="tel:+233240301853">+233 240 30 1853</a><br>
-        <a href="mailto:info@accrachamber.example">info@accrachamber.example</a></p>
+      <h2>Contact the chamber</h2>
+      <p>12 Ring Road Central, Accra</p>
+      <p><a href="tel:+233300000100">+233 30 000 0100</a></p>
+      <p><a href="mailto:info@example.com">info@example.com</a></p>
     </div>
     <div>
-      <h2>Site info</h2>
-      <p>&copy; <span id="year"></span> Accra Chamber of Commerce<br>
-        Selassie Kwabla Heloo<br>
-        WDD 231<br>
-        Last modified: <span id="last-modified"></span></p>
+      <h2>Course project</h2>
+      <p>Selassie Kwabla Heloo</p>
+      <p>WDD 231</p>
+      <p>&copy; <span id="currentyear"></span> Accra Business Chamber</p>
+    </div>
+    <div>
+      <h2>Page details</h2>
+      <p>Last modified: <span id="lastModified"></span></p>
     </div>
   </footer>
 </body>
