@@ -70,4 +70,18 @@
   .spotlight-panel {
     grid-column: 1 / -1;
   }
+
+  .join-layout {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .summary dl {
+    grid-template-columns: max-content 1fr;
+  }
+
+  .summary dd {
+    margin-bottom: 0;
+  }
 }

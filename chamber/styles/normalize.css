@@ -1,32 +1,6 @@
 /* Minimal reset: consistent box sizing, no default margins, sane media and form defaults */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-figure {
-    margin: 0;
-}
-
-ul {
-    padding: 0;
-    list-style: none;
-}
-
-img,
-svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-button {
-    font: inherit;
-}
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, ul, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; }
