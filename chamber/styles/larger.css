@@ -51,4 +51,23 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 1.5rem 2rem;
   }
+
+  .cta {
+    left: 2rem;
+    bottom: 2rem;
+    transform: none;
+  }
+
+  .hero img {
+    min-height: 320px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .spotlight-panel {
+    grid-column: 1 / -1;
+  }
 }

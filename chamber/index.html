@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome | Accra Business Chamber</title>
+  <meta name="description" content="Local events, today's weather and featured members from the Accra Business Chamber. Join to grow your business with us.">
+  <meta name="author" content="Selassie Kwabla Heloo">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Welcome | Accra Business Chamber">
+  <meta property="og:description" content="Local events, today's weather and featured members from the Accra Business Chamber. Join to grow your business with us.">
+  <meta property="og:image" content="https://helooselassie.github.io/wdd231/chamber/images/chamber-share.png">
+  <meta property="og:url" content="https://helooselassie.github.io/wdd231/chamber/index.html">
+
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script type="module" src="scripts/weather.js" defer></script>
+  <script type="module" src="scripts/home.js" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <img src="images/favicon.svg" alt="" width="36" height="36">
+      <span>Accra Business Chamber</span>
+    </a>
+    <button id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to the Accra Business Chamber</h1>
+
+    <div class="hero">
+      <img src="images/hero.webp" alt="Illustration of city buildings at sunset" width="1200" height="500" fetchpriority="high">
+      <a class="cta" href="join.html">Join the chamber</a>
+    </div>
+
+    <div class="home-grid">
+      <section class="panel events" aria-labelledby="events-heading">
+        <h2 id="events-heading">Upcoming events</h2>
+        <ul>
+          <li><strong>Small Business Breakfast</strong><br>Thursday 3 December, 8:00 am</li>
+          <li><strong>Export Basics Workshop</strong><br>Thursday 10 December, 2:00 pm</li>
+          <li><strong>Year-End Members' Mixer</strong><br>Thursday 17 December, 6:00 pm</li>
+        </ul>
+      </section>
+
+      <section class="panel weather" aria-labelledby="weather-heading">
+        <h2 id="weather-heading">Weather in Accra</h2>
+        <p>Right now: <strong id="current-weather">Loading...</strong></p>
+        <h3>Three-day forecast</h3>
+        <ul id="forecast"></ul>
+      </section>
+
+      <section class="panel spotlight-panel" aria-labelledby="spotlight-heading">
+        <h2 id="spotlight-heading">Member spotlights</h2>
+        <div id="spotlights"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <h2>Contact the chamber</h2>
+      <p>12 Ring Road Central, Accra</p>
+      <p><a href="tel:+233300000100">+233 30 000 0100</a></p>
+      <p>info@example.com</p>
+    </div>
+    <div>
+      <h2>Course project</h2>
+      <p>Selassie Kwabla Heloo</p>
+      <p>WDD 231</p>
+      <p>&copy; <span id="currentyear"></span> Accra Business Chamber</p>
+    </div>
+    <div>
+      <h2>Page details</h2>
+      <p>Last modified: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -115,7 +115,8 @@ h1 {
 }
 
 /* Member cards (grid view is the default) */
-#members {
+#members,
+#spotlights {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
   gap: 1rem;
@@ -143,7 +144,8 @@ h1 {
   overflow-wrap: anywhere;
 }
 
-.member h2 {
+.member h2,
+.member h3 {
   font-size: 1.15rem;
 }
 
@@ -199,4 +201,67 @@ footer h2 {
 
 footer a {
   color: var(--gold);
+}
+
+/* Home page */
+.hero {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.hero img {
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cta {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  color: var(--green);
+  white-space: nowrap;
+  text-decoration: none;
+  background: var(--gold);
+  border-radius: 6px;
+  transform: translateX(-50%);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--paper);
+}
+
+.home-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1rem 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.panel h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.panel h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1rem;
+}
+
+.events li + li {
+  margin-top: 0.75rem;
+}
+
+.panel .member h3 {
+  margin: 0;
+  font-size: 1.15rem;
 }
