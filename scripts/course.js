@@ -9,32 +9,36 @@ const courses = [
 
 const courseList = document.querySelector("#course-list");
 const creditTotal = document.querySelector("#credit-total");
-const filterButtons = document.querySelectorAll(".filters button");
+const buttons = document.querySelectorAll(".filters button");
 
-function showCourses(list) {
+function showCourses(shown) {
   courseList.innerHTML = "";
 
-  list.forEach((course) => {
+  shown.forEach((course) => {
     const item = document.createElement("li");
-    item.className = course.completed ? "course done" : "course";
-    item.title = `${course.title} (${course.credits} credits)`;
-    item.innerHTML = `
-      <span>${course.subject} ${course.number}</span>
-      <span class="status">${course.completed ? "Completed" : "Not yet taken"}</span>
-    `;
+    item.title = course.title;
+    item.innerHTML = `${course.subject} ${course.number}`;
+    if (course.completed) {
+      item.classList.add("done");
+      item.innerHTML += ` <span class="sr">(completed)</span>`;
+    }
     courseList.append(item);
   });
 
-  creditTotal.textContent = list.reduce((sum, course) => sum + course.credits, 0);
+  creditTotal.textContent = shown.reduce((total, course) => total + course.credits, 0);
 }
 
-filterButtons.forEach((button) => {
+buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-    const selected = filter === "all" ? courses : courses.filter((course) => course.subject === filter);
+    const subject = button.dataset.filter;
 
-    filterButtons.forEach((other) => other.setAttribute("aria-pressed", other === button));
-    showCourses(selected);
+    buttons.forEach((b) => b.setAttribute("aria-pressed", b === button));
+
+    if (subject === "all") {
+      showCourses(courses);
+    } else {
+      showCourses(courses.filter((course) => course.subject === subject));
+    }
   });
 });
 

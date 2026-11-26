@@ -2,8 +2,9 @@
   --navy: #0b1f33;
   --gold: #c9a24d;
   --paper: #ffffff;
+  --mist: #e8ecef;
   --cream: #fff8e6;
-  --line: #c8d0d8;
+  --ink: #1b2733;
 }
 
 * {
@@ -14,49 +15,63 @@ body {
   margin: 0;
   font-family: "Figtree", Arial, sans-serif;
   line-height: 1.6;
-  color: var(--navy);
+  color: var(--ink);
   background: var(--paper);
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* Header and navigation */
+a {
+  color: var(--navy);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* Header and nav */
 header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
-  background: var(--navy);
+  padding: 0.5rem 1rem 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--paper);
+  padding-bottom: 0.5rem;
   font-weight: 700;
+  color: var(--navy);
   text-decoration: none;
 }
 
 #menu-button {
   width: 44px;
   height: 44px;
+  margin-bottom: 0.5rem;
   font-size: 1.75rem;
   line-height: 1;
   color: var(--paper);
   background: var(--navy);
-  border: 2px solid var(--gold);
+  border: 2px solid var(--navy);
   border-radius: 6px;
   cursor: pointer;
 }
 
 #site-nav {
   display: none;
-  width: 100%;
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  background: var(--navy);
 }
 
 #site-nav.open {
@@ -64,14 +79,14 @@ header {
 }
 
 #site-nav ul {
-  margin: 0.75rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 #site-nav a {
   display: block;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 1rem;
   color: var(--paper);
   text-decoration: none;
   border-bottom: 3px solid var(--navy);
@@ -82,54 +97,65 @@ header {
 }
 
 #site-nav a.active {
-  color: var(--gold);
-  font-weight: 700;
-  border-bottom-color: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+  background: var(--mist);
+  border-bottom-color: var(--mist);
 }
 
-/* Main content */
+/* Main */
 main {
-  padding: 1rem;
+  padding: 0 1rem 1rem;
 }
 
 h1 {
-  margin: 0.5rem 0 1rem;
+  margin: 1rem 0;
   font-size: 2rem;
 }
 
-h2 {
-  margin: 0 0 0.75rem;
-  font-size: 1.35rem;
+.top-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-section {
-  margin-bottom: 1.5rem;
-  padding: 1.25rem;
-  border: 1px solid var(--line);
+.panel {
+  background: var(--mist);
+  border: 1px solid var(--navy);
+}
+
+.panel h2 {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--paper);
+  background: var(--navy);
+}
+
+.panel-body {
+  padding: 1rem;
+}
+
+.panel-body p {
+  margin: 0 0 0.75rem;
+}
+
+.photo img {
+  width: 200px;
+  margin: 0 auto;
   border-radius: 8px;
 }
 
-a {
-  color: var(--navy);
-  text-decoration-thickness: 2px;
-}
-
-.about img {
-  display: block;
-  width: 160px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-}
-
-/* Course list */
+/* Courses */
 .filters {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .filters button {
-  flex: 1;
   min-height: 44px;
   font: inherit;
   font-weight: 600;
@@ -145,10 +171,6 @@ a {
   background: var(--navy);
 }
 
-.credits {
-  margin: 0 0 0.75rem;
-}
-
 #course-list {
   display: grid;
   gap: 0.5rem;
@@ -157,39 +179,49 @@ a {
   list-style: none;
 }
 
-.course {
-  display: flex;
-  flex-direction: column;
-  padding: 0.75rem 1rem;
+#course-list li {
+  padding: 0.5rem;
+  text-align: center;
   background: var(--paper);
-  border: 2px solid var(--line);
-  border-radius: 6px;
+  border: 2px solid var(--navy);
+  border-radius: 4px;
 }
 
-.course.done {
+#course-list li.done {
   background: var(--cream);
   border-color: var(--gold);
-  border-left-width: 8px;
+  border-width: 2px 2px 2px 8px;
 }
 
-.status {
-  font-size: 0.9rem;
-}
-
-.course.done .status::before {
+#course-list li.done::before {
   content: "\2713  ";
+}
+
+.credits {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 
 /* Footer */
 footer {
-  padding: 1.25rem 1rem;
+  padding: 1rem;
   text-align: center;
-  color: var(--paper);
-  background: var(--navy);
+  background: var(--mist);
+  border-top: 1px solid var(--navy);
 }
 
 footer p {
   margin: 0.25rem 0;
+  font-size: 0.9rem;
 }
 
 .social {
