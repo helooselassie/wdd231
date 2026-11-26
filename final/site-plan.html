@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Plan | SafeChoice Security Guide</title>
+  <meta name="description" content="Site plan for SafeChoice, a buyer's guide to electronic security systems for homes and small businesses.">
+  <meta name="author" content="Selassie Kwabla Heloo">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/site-plan.css">
+</head>
+<body>
+  <header>
+    <h1>SafeChoice Security Guide: Site Plan</h1>
+    <p>Individual project by Selassie Kwabla Heloo</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="name-heading">
+      <h2 id="name-heading">Site name</h2>
+      <p><strong>SafeChoice Security Guide</strong></p>
+      <p>The name says what the site does. "Safe" points to security, and "Choice" points to the real job of the site, which is helping a home owner or shop owner decide what to buy and what to skip.</p>
+      <p class="note">Possible domain: safechoice-guide.com (I haven't checked whether it's available).</p>
+    </section>
+
+    <section aria-labelledby="purpose-heading">
+      <h2 id="purpose-heading">Site purpose</h2>
+      <p>SafeChoice is a buyer's guide to electronic security for homes and small businesses. It explains five kinds of system: CCTV, access control, intrusion alarms, electric fencing and vehicle tracking. For each one it says what it protects against and who usually needs it.</p>
+      <p>The site also helps visitors compare options, understand cost ranges and installation, and avoid common mistakes. A checklist or cost-estimate tool, built with JavaScript, helps them work out what their property needs.</p>
+      <h3>Planned pages</h3>
+      <ul>
+        <li><strong>Home</strong> (index.html): an overview of the five system types, what each protects against and who it suits.</li>
+        <li><strong>Choosing a System</strong> (choosing.html): a comparison of the options, cost ranges, installation notes and common mistakes.</li>
+        <li><strong>FAQ and Resources</strong> (faq.html): answers on maintenance, monitoring and local regulations, plus the checklist or cost-estimate tool.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="scenarios-heading">
+      <h2 id="scenarios-heading">Scenarios</h2>
+      <p>These are questions a typical visitor would ask. The content of each page is meant to answer them.</p>
+      <ul>
+        <li>I run a small shop. Should I start with cameras, an alarm, or both?</li>
+        <li>How much should I budget to secure a three-bedroom house?</li>
+        <li>Do I need a permit before I install an electric fence or cameras?</li>
+        <li>Who watches my alarm when I'm away, and what does it cost to keep a system working after it's installed?</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="color-heading">
+      <h2 id="color-heading">Color scheme</h2>
+      <p>The palette is dark navy and gold, with light neutrals so long text stays easy to read. This page uses only these five colors. Contrast ratios are calculated against the WCAG AA minimum of 4.5 to 1 for body text.</p>
+      <ul class="colors">
+        <li class="color-item">
+          <span class="swatch swatch-navy">Navy #0B1F33</span>
+          <p>Page headers and footers, all headings, and the text color for buttons that sit on gold. White on navy has a contrast ratio of 16.7 to 1.</p>
+        </li>
+        <li class="color-item">
+          <span class="swatch swatch-gold">Gold #C9A24D</span>
+          <p>Accents only: rules under headers, card borders and highlighted labels. Navy text on gold is 7.0 to 1, and gold text on navy is 7.0 to 1. Gold is never used for text on white.</p>
+        </li>
+        <li class="color-item">
+          <span class="swatch swatch-paper">White #FFFFFF</span>
+          <p>Card and form backgrounds, and text on navy. Ink text on white is 15.2 to 1.</p>
+        </li>
+        <li class="color-item">
+          <span class="swatch swatch-mist">Mist #F2F5F8</span>
+          <p>The page background behind the cards. Ink on mist is 13.9 to 1 and navy on mist is 15.3 to 1.</p>
+        </li>
+        <li class="color-item">
+          <span class="swatch swatch-ink">Ink #1B2733</span>
+          <p>Paragraphs, lists and other body text.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="type-heading">
+      <h2 id="type-heading">Typography</h2>
+      <p>Two Google Fonts, one for headings and one for reading.</p>
+      <div class="specimen">
+        <p class="specimen-heading">Manrope Bold and ExtraBold</p>
+        <p>Used for the site name, page titles and section headings.</p>
+      </div>
+      <h3>Body font</h3>
+      <div class="specimen">
+        <p class="specimen-body">Source Sans 3 Regular and SemiBold. Used for paragraphs, lists, form labels, buttons and navigation links. It stays readable at small sizes, which matters for the price ranges on the component cards.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="wire-heading">
+      <h2 id="wire-heading">Wireframe</h2>
+      <p>Black and white sketches of the home page. The small-screen sketch shows a single column and a menu button. The large-screen sketch shows a horizontal menu and the five system types in a grid.</p>
+      <div class="sketches">
+        <figure>
+          <img src="images/wireframe-small.png" alt="Sketch of the home page on a phone" width="..." height="...">
+          <figcaption>Small screen</figcaption>
+        </figure>
+        <figure>
+          <img src="images/wireframe-large.png" alt="Sketch of the home page on a desktop" width="..." height="...">
+          <figcaption>Large screen</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Selassie Kwabla Heloo, WDD 231 individual project plan</p>
+  </footer>
+</body>
+</html>
